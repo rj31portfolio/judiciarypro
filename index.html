@@ -83,12 +83,294 @@
     <!-- MODERNIZER CSS  -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
+    <style>
+        :root {
+            --jp-edu-accent: #ffb62f;
+            --jp-edu-ink: #f0f0f3;
+            --jp-edu-muted: #f2f4fa;
+            --jp-edu-bg: #f4f6ff;
+            --jp-edu-card: #ffffff;
+            --jp-edu-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
+        }
+
+        .jp-edu-banner {
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/007/233/624/small_2x/brick-black-wall-texture-background-dark-brickwork-pattern-block-stone-structure-backdrop-dark-brick-wall-realistic-template-abstract-modern-wallpaper-design-illustration-vector.jpg);
+            padding: 80px 0 90px;
+        }
+
+        .jp-edu-hero {
+            display: flex;
+            align-items: center;
+        }
+
+        .jp-edu-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--jp-edu-ink);
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .jp-edu-title span {
+            color: var(--jp-edu-accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .jp-edu-title span::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            bottom: -6px;
+            width: 80%;
+            height: 4px;
+            border-radius: 999px;
+            background: #ffb38f;
+        }
+
+        .jp-edu-text {
+            color: var(--jp-edu-muted);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 460px;
+            margin-bottom: 20px;
+        }
+
+        .jp-edu-search {
+            background: var(--jp-edu-card);
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--jp-edu-shadow);
+            max-width: 420px;
+        }
+
+        .jp-edu-search input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 14px;
+            color: var(--jp-edu-ink);
+            background: transparent;
+        }
+
+        .jp-edu-search button {
+            border: none;
+            background: transparent;
+            color: var(--jp-edu-accent);
+            font-size: 16px;
+            padding: 4px;
+        }
+
+        .jp-edu-phone .jp-edu-flag {
+            width: 26px;
+            height: 18px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #1b1b1b;
+            background: linear-gradient(180deg, #ff9933 0%, #ffffff 45%, #138808 100%);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .jp-edu-phone .jp-edu-code {
+            font-weight: 600;
+            color: var(--jp-edu-ink);
+            padding-right: 8px;
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .jp-edu-phone input {
+            min-width: 0;
+        }
+
+        .jp-edu-phone button {
+            background: var(--jp-edu-accent);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(47, 98, 255, 0.25);
+        }
+
+        .jp-edu-help {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--jp-edu-muted);
+        }
+
+        .jp-edu-help a {
+            color: var(--jp-edu-accent);
+            font-weight: 600;
+        }
+
+        .jp-edu-tutors {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .jp-edu-avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .jp-edu-avatars img,
+        .jp-edu-avatars span {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-left: -10px;
+            object-fit: cover;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .jp-edu-avatars span {
+            background: #2b2f3a;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .jp-edu-tutor-text {
+            font-size: 13px;
+            color: var(--jp-edu-ink);
+            font-weight: 600;
+        }
+
+        .jp-edu-collage {
+            position: relative;
+            min-height: 360px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .jp-edu-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--jp-edu-shadow);
+            border: 6px solid #fff;
+        }
+
+        .jp-edu-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .jp-edu-circle.large {
+            width: 180px;
+            height: 180px;
+        }
+
+        .jp-edu-card {
+            position: absolute;
+            background: #5a4848;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: var(--jp-edu-shadow);
+            font-size: 12px;
+            color: var(--jp-edu-ink);
+        }
+
+        .jp-edu-card strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .jp-edu-card.top {
+            top: 80px;
+            right: -10px;
+        }
+
+        .jp-edu-card.bottom {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .jp-edu-squiggle {
+            position: absolute;
+            left: -10px;
+            bottom: 30px;
+            width: 70px;
+            height: 70px;
+            border: 2px solid #ff6b5f;
+            border-color: #ff6b5f transparent transparent transparent;
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+        @media (max-width: 991px) {
+            .jp-edu-hero {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .jp-edu-title {
+                font-size: 34px;
+            }
+
+            .jp-edu-collage {
+                min-height: 300px;
+            }
+
+            .jp-edu-card.top {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .jp-edu-banner {
+                padding: 60px 0 70px;
+            }
+
+            .jp-edu-search {
+                max-width: 100%;
+            }
+
+            .jp-edu-collage {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .jp-edu-circle,
+            .jp-edu-circle.large {
+                width: 120px;
+                height: 120px;
+            }
+
+            .jp-edu-card.top {
+                top: 60px;
+                right: 0;
+            }
+
+            .jp-edu-card.bottom {
+                left: 0;
+            }
+        }
+    </style>
+
 </head>
 <body class="home">
 <div class="lgx-container ">
 <!-- ***  ADD YOUR SITE CONTENT HERE *** -->
-
-
 <!--HEADER-->
 <header>
     <div id="lgx-header" class="lgx-header"> <!--lgx-header-container lgx-header-container-white lgx-header-container-brand lgx-header-singlemenu-->
@@ -147,9 +429,7 @@
                                             <ul class="nav navbar-nav lgx-nav">
                                                 <li>
                                                     <a href="index.html" class="active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
-                                                   
                                                 <li>
-                                               
                                                 <li><a class="lgx-scroll active" href="#lgx-about">About</a></li>
                                                 <li><a class="lgx-scroll" href="#lgx-courses">Courses</a></li>
                                                 <li><a class="lgx-scroll" href="#lgx-events">Events</a></li>
@@ -186,38 +466,59 @@
     </div>
 </header>
 <!--HEADER END-->
-
-
 <!--BANNER-->
-<section>
-    <div class="lgx-banner">
-        <div class="lgx-banner-style">
-            <div class="lgx-inner lgx-inner-fixed">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="lgx-banner-info  lgx-banner-info-white">
-                                <h3 class="subtitle">Judiciary Exam Preparation</h3>
-                                <h2 class="title">Judiciary<span>PRO</span></h2>
-                                <p class="text">Clear concepts, disciplined practice, and personal mentorship. <br> Learn to read, reason, and write like a judge with daily doubt-clearing, answer writing, and weekly tests.</p>
-                                <div class="btn-area">
-                                    <a class="lgx-btn" href="#lgx-courses">Explore Courses</a>
-                                    <a class="lgx-btn lgx-btn-border" href="contact.html">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--//.ROW-->
+<section class="jp-edu-banner">
+    <div class="container">
+        <div class="row jp-edu-hero">
+            <div class="col-xs-12 col-md-6">
+                <h2 class="jp-edu-title">India's Best Online Platform <span>JudiciaryPRO</span></h2>
+                <p class="jp-edu-text">Our CLAT-UG Law Entrance Program, designed for students of Class 11, 12, droppers, and early aspirants. We follow a modern hybrid model (online + offline) with daily concept classes, doubt-clearing, sectional practice, full-length mocks, library support, and a structured current affairs routine.</p>
+                <div class="jp-edu-search jp-edu-phone">
+                    <span class="jp-edu-flag">IN</span>
+                    <span class="jp-edu-code">+91</span>
+                    <input type="tel" placeholder="Enter mobile number" inputmode="numeric">
+                    <button type="button" aria-label="Submit">Submit</button>
                 </div>
-                <!-- //.CONTAINER -->
+                <div class="jp-edu-help">We will send an OTP for verification.</div>
+                <div class="jp-edu-tutors">
+                    <div class="jp-edu-avatars">
+                        <img src="assets/img/teachers/teacher1.jpg" alt="Tutor 1">
+                        <img src="assets/img/teachers/teacher2.jpg" alt="Tutor 2">
+                        <img src="assets/img/teachers/teacher3.jpg" alt="Tutor 3">
+                        <span>2k+</span>
+                    </div>
+                    <div class="jp-edu-tutor-text">More Than<br>2k+ Tutors</div>
+                </div>
             </div>
-            <!-- //.INNER -->
+            <div class="col-xs-12 col-md-6">
+                <div class="jp-edu-collage">
+                    <div class="jp-edu-circle large">
+                        <img src="assets/img/about-us.png" alt="Student">
+                    </div>
+                    <div class="jp-edu-circle">
+                        <img src="assets/img/banner.png" alt="Student">
+                    </div>
+                    <div class="jp-edu-circle">
+                        <img src="assets/img/teachers/teacher2.jpg" alt="Student">
+                    </div>
+                    <div class="jp-edu-circle large">
+                        <img src="assets/img/teachers/teacher1.jpg" alt="Student">
+                    </div>
+                    <div class="jp-edu-card top">
+                        Popular Course
+                        <strong>Start Learning Today!!</strong>
+                    </div>
+                    <div class="jp-edu-card bottom">
+                        <i class="fa fa-star" aria-hidden="true"></i> 4.5 (3.4k Reviews)
+                        <strong>Congratulations</strong>
+                    </div>
+                    <span class="jp-edu-squiggle"></span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 <!--BANNER END-->
-
-
 <!--ABOUT-->
 <section>
     <div id="lgx-about" class="lgx-about lgx-about-bottom"> <!--lgx-about-bottom-->
@@ -243,9 +544,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12">
-                        <img src="assets/img/bannerabout.png" alt="about">
-                    </div>
+                    
                 </div>
                 <!--//.ROW-->
             </div>
@@ -805,7 +1104,6 @@
                                 </div>
                             </div> <!--//.News-single-->
                         </div> <!--//.Item-->
-
                         <div class="item">
                             <!--News-single-->
                             <div class="lgx-news-single">
@@ -1035,10 +1333,6 @@
     </div>
 </section>
 <!--Subscription END-->
-
-
-
-
 <!--FOOTER-->
 <footer>
     <div id="lgx-footer" class="lgx-footer">
@@ -1123,7 +1417,6 @@
                         <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                     </ul>
                 </div>
-
             </div>
             <!-- //.CONTAINER -->
         </div>
@@ -1131,8 +1424,6 @@
     </div>
 </footer>
 <!--FOOTER END-->
-
-
 </div>
 <!--//.LGX SITE CONTAINER-->
 <!-- *** ADD YOUR SITE SCRIPT HERE *** -->

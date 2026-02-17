@@ -1677,13 +1677,10 @@ textarea.form-control {
 
 .lgx-banner .lgx-inner {
     position: static;
-    height  : auto;
-    padding : 30rem 0
+    height  : auto;   
 }
 
-.lgx-banner .lgx-inner-fixed {
-    padding: 32rem 0
-}
+
 
 .lgx-banner2 {
     background: url(../img/slider2.jpg) top center no-repeat
