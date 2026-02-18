@@ -51,7 +51,7 @@
         }
 
         .jp-edu-search {
-            background: var(--jp-edu-card);
+            background: #5a4848;
             border-radius: 10px;
             padding: 10px 14px;
             display: flex;
