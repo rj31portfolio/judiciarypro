@@ -1,0 +1,516 @@
+   :root {
+            --jp-edu-accent: #ffb62f;
+            --jp-edu-ink: #f0f0f3;
+            --jp-edu-muted: #f2f4fa;
+            --jp-edu-bg: #f4f6ff;
+            --jp-edu-card: #ffffff;
+            --jp-edu-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
+        }
+
+        .jp-edu-banner {
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/007/233/624/small_2x/brick-black-wall-texture-background-dark-brickwork-pattern-block-stone-structure-backdrop-dark-brick-wall-realistic-template-abstract-modern-wallpaper-design-illustration-vector.jpg);
+            padding: 80px 0 90px;
+        }
+
+        .jp-edu-hero {
+            display: flex;
+            align-items: center;
+        }
+
+        .jp-edu-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--jp-edu-ink);
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .jp-edu-title span {
+            color: var(--jp-edu-accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .jp-edu-title span::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            bottom: -6px;
+            width: 80%;
+            height: 4px;
+            border-radius: 999px;
+            background: #ffb38f;
+        }
+
+        .jp-edu-text {
+            color: var(--jp-edu-muted);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 460px;
+            margin-bottom: 20px;
+        }
+
+        .jp-edu-search {
+            background: var(--jp-edu-card);
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--jp-edu-shadow);
+            max-width: 420px;
+        }
+
+        .jp-edu-search input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 14px;
+            color: var(--jp-edu-ink);
+            background: transparent;
+        }
+
+        .jp-edu-search button {
+            border: none;
+            background: transparent;
+            color: var(--jp-edu-accent);
+            font-size: 16px;
+            padding: 4px;
+        }
+
+        .jp-edu-phone .jp-edu-flag {
+            width: 26px;
+            height: 18px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #1b1b1b;
+            background: linear-gradient(180deg, #ff9933 0%, #ffffff 45%, #138808 100%);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .jp-edu-phone .jp-edu-code {
+            font-weight: 600;
+            color: var(--jp-edu-ink);
+            padding-right: 8px;
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .jp-edu-phone input {
+            min-width: 0;
+        }
+
+        .jp-edu-phone button {
+            background: var(--jp-edu-accent);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(47, 98, 255, 0.25);
+        }
+
+        .jp-edu-help {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--jp-edu-muted);
+        }
+
+        .jp-edu-help a {
+            color: var(--jp-edu-accent);
+            font-weight: 600;
+        }
+
+        .jp-edu-tutors {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .jp-edu-avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .jp-edu-avatars img,
+        .jp-edu-avatars span {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-left: -10px;
+            object-fit: cover;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .jp-edu-avatars span {
+            background: #2b2f3a;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .jp-edu-tutor-text {
+            font-size: 13px;
+            color: var(--jp-edu-ink);
+            font-weight: 600;
+        }
+
+        .jp-edu-collage {
+            position: relative;
+            min-height: 360px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .jp-edu-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--jp-edu-shadow);
+            border: 6px solid #fff;
+        }
+
+        .jp-edu-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .jp-edu-circle.large {
+            width: 180px;
+            height: 180px;
+        }
+
+        .jp-edu-card {
+            position: absolute;
+            background: #5a4848;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: var(--jp-edu-shadow);
+            font-size: 12px;
+            color: var(--jp-edu-ink);
+        }
+
+        .jp-edu-card strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .jp-edu-card.top {
+            top: 80px;
+            right: -10px;
+        }
+
+        .jp-edu-card.bottom {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .jp-edu-squiggle {
+            position: absolute;
+            left: -10px;
+            bottom: 30px;
+            width: 70px;
+            height: 70px;
+            border: 2px solid #ff6b5f;
+            border-color: #ff6b5f transparent transparent transparent;
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+        @media (max-width: 991px) {
+            .jp-edu-hero {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .jp-edu-title {
+                font-size: 34px;
+            }
+
+            .jp-edu-collage {
+                min-height: 300px;
+            }
+
+            .jp-edu-card.top {
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .jp-edu-banner {
+                padding: 60px 0 70px;
+            }
+
+            .jp-edu-search {
+                max-width: 100%;
+            }
+
+            .jp-edu-collage {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .jp-edu-circle,
+            .jp-edu-circle.large {
+                width: 120px;
+                height: 120px;
+            }
+
+            .jp-edu-card.top {
+                top: 60px;
+                right: 0;
+            }
+
+            .jp-edu-card.bottom {
+                left: 0;
+            }
+        }
+
+        .jp-results {
+            padding: 0px 0;
+            background: #f7f7f9;
+        }
+
+        .jp-results-wrap {
+            margin-top: 30px;
+        }
+
+        .jp-results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .jp-result-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 14px 16px 18px;
+            box-shadow: 0 10px 24px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .jp-result-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.12);
+        }
+
+        .jp-result-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .jp-result-rank-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #111;
+        }
+
+        .jp-result-rank-number {
+            font-size: 54px;
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(180deg, #f7d26b 0%, #c08b2b 60%, #8a5c14 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 6px 12px rgba(142, 103, 28, 0.25);
+        }
+
+        .jp-result-photo {
+            position: relative;
+            width: 90px;
+            height: 100px;
+        }
+
+        .jp-result-photo::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border: 3px solid #d7a338;
+            transform: skewX(-7deg);
+            border-radius: 8px;
+        }
+
+        .jp-result-photo img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #efefef;
+        }
+
+        .jp-result-info {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .jp-result-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            color: #1b1b1b;
+        }
+
+        .jp-result-info p {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b6b6b;
+            margin: 0;
+        }
+
+        .jp-results-filter {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 10px 24px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .jp-results-filter h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .jp-results-filter button {
+            width: 100%;
+            border: 1px solid #d7a338;
+            background: #fff;
+            color: #5a3b0c;
+            font-weight: 600;
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .jp-results-filter button.active,
+        .jp-results-filter button:hover {
+            background: #d7a338;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 991px) {
+            .jp-results-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .jp-results-filter {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .jp-results {
+                padding: 60px 0;
+            }
+
+            .jp-results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .jp-result-rank-number {
+                font-size: 48px;
+            }
+        }
+
+        .jp-lead {
+            padding: 70px 0;
+            background: linear-gradient(135deg, #f9f6f1 0%, #fff7e3 45%, #f4f6ff 100%);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .jp-lead-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 24px 24px 28px;
+            box-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
+        }
+
+        .jp-lead-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1d1d1d;
+        }
+
+        .jp-lead-card p {
+            font-size: 14px;
+            color: #5b5b5b;
+            margin-bottom: 18px;
+        }
+
+        .jp-lead-card .form-control {
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+        }
+
+        .jp-lead-card .form-control:focus {
+            border-color: #d7a338;
+            box-shadow: 0 0 0 3px rgba(215, 163, 56, 0.15);
+        }
+
+        .jp-lead-card .lgx-btn {
+            width: 100%;
+            margin-top: 8px;
+            border-radius: 10px;
+        }
+
+        .jp-lead-carousel {
+            background: #fff;
+            border-radius: 18px;
+            padding: 14px;
+            box-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
+        }
+
+        .jp-lead-carousel .carousel-inner img {
+            width: 100%;
+            border-radius: 14px;
+        }
+
+        .jp-lead-carousel .carousel-caption {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 12px 16px;
+            border-radius: 12px;
+        }
+
+        .jp-lead-carousel .carousel-control {
+            color: #fff;
+        }
+
+        @media (max-width: 991px) {
+            .jp-lead {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .jp-lead-card {
+                margin-bottom: 20px;
+            }
+        }

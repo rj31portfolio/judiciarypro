@@ -83,289 +83,7 @@
     <!-- MODERNIZER CSS  -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
-    <style>
-        :root {
-            --jp-edu-accent: #ffb62f;
-            --jp-edu-ink: #f0f0f3;
-            --jp-edu-muted: #f2f4fa;
-            --jp-edu-bg: #f4f6ff;
-            --jp-edu-card: #ffffff;
-            --jp-edu-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
-        }
-
-        .jp-edu-banner {
-            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/007/233/624/small_2x/brick-black-wall-texture-background-dark-brickwork-pattern-block-stone-structure-backdrop-dark-brick-wall-realistic-template-abstract-modern-wallpaper-design-illustration-vector.jpg);
-            padding: 80px 0 90px;
-        }
-
-        .jp-edu-hero {
-            display: flex;
-            align-items: center;
-        }
-
-        .jp-edu-title {
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--jp-edu-ink);
-            line-height: 1.2;
-            margin-bottom: 14px;
-        }
-
-        .jp-edu-title span {
-            color: var(--jp-edu-accent);
-            position: relative;
-            display: inline-block;
-        }
-
-        .jp-edu-title span::after {
-            content: "";
-            position: absolute;
-            left: 6px;
-            bottom: -6px;
-            width: 80%;
-            height: 4px;
-            border-radius: 999px;
-            background: #ffb38f;
-        }
-
-        .jp-edu-text {
-            color: var(--jp-edu-muted);
-            font-size: 15px;
-            line-height: 1.7;
-            max-width: 460px;
-            margin-bottom: 20px;
-        }
-
-        .jp-edu-search {
-            background: var(--jp-edu-card);
-            border-radius: 10px;
-            padding: 10px 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: var(--jp-edu-shadow);
-            max-width: 420px;
-        }
-
-        .jp-edu-search input {
-            border: none;
-            outline: none;
-            flex: 1;
-            font-size: 14px;
-            color: var(--jp-edu-ink);
-            background: transparent;
-        }
-
-        .jp-edu-search button {
-            border: none;
-            background: transparent;
-            color: var(--jp-edu-accent);
-            font-size: 16px;
-            padding: 4px;
-        }
-
-        .jp-edu-phone .jp-edu-flag {
-            width: 26px;
-            height: 18px;
-            border-radius: 4px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: 700;
-            color: #1b1b1b;
-            background: linear-gradient(180deg, #ff9933 0%, #ffffff 45%, #138808 100%);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .jp-edu-phone .jp-edu-code {
-            font-weight: 600;
-            color: var(--jp-edu-ink);
-            padding-right: 8px;
-            border-right: 1px solid rgba(0, 0, 0, 0.12);
-        }
-
-        .jp-edu-phone input {
-            min-width: 0;
-        }
-
-        .jp-edu-phone button {
-            background: var(--jp-edu-accent);
-            color: #fff;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(47, 98, 255, 0.25);
-        }
-
-        .jp-edu-help {
-            margin-top: 10px;
-            font-size: 13px;
-            color: var(--jp-edu-muted);
-        }
-
-        .jp-edu-help a {
-            color: var(--jp-edu-accent);
-            font-weight: 600;
-        }
-
-        .jp-edu-tutors {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .jp-edu-avatars {
-            display: flex;
-            align-items: center;
-        }
-
-        .jp-edu-avatars img,
-        .jp-edu-avatars span {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            margin-left: -10px;
-            object-fit: cover;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .jp-edu-avatars span {
-            background: #2b2f3a;
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .jp-edu-tutor-text {
-            font-size: 13px;
-            color: var(--jp-edu-ink);
-            font-weight: 600;
-        }
-
-        .jp-edu-collage {
-            position: relative;
-            min-height: 360px;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .jp-edu-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: var(--jp-edu-shadow);
-            border: 6px solid #fff;
-        }
-
-        .jp-edu-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .jp-edu-circle.large {
-            width: 180px;
-            height: 180px;
-        }
-
-        .jp-edu-card {
-            position: absolute;
-            background: #5a4848;
-            padding: 12px 16px;
-            border-radius: 12px;
-            box-shadow: var(--jp-edu-shadow);
-            font-size: 12px;
-            color: var(--jp-edu-ink);
-        }
-
-        .jp-edu-card strong {
-            display: block;
-            font-size: 13px;
-        }
-
-        .jp-edu-card.top {
-            top: 80px;
-            right: -10px;
-        }
-
-        .jp-edu-card.bottom {
-            bottom: 20px;
-            left: 20px;
-        }
-
-        .jp-edu-squiggle {
-            position: absolute;
-            left: -10px;
-            bottom: 30px;
-            width: 70px;
-            height: 70px;
-            border: 2px solid #ff6b5f;
-            border-color: #ff6b5f transparent transparent transparent;
-            border-radius: 50%;
-            transform: rotate(-20deg);
-        }
-
-        @media (max-width: 991px) {
-            .jp-edu-hero {
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .jp-edu-title {
-                font-size: 34px;
-            }
-
-            .jp-edu-collage {
-                min-height: 300px;
-            }
-
-            .jp-edu-card.top {
-                right: 10px;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .jp-edu-banner {
-                padding: 60px 0 70px;
-            }
-
-            .jp-edu-search {
-                max-width: 100%;
-            }
-
-            .jp-edu-collage {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .jp-edu-circle,
-            .jp-edu-circle.large {
-                width: 120px;
-                height: 120px;
-            }
-
-            .jp-edu-card.top {
-                top: 60px;
-                right: 0;
-            }
-
-            .jp-edu-card.bottom {
-                left: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/custom.css" media="all"/>
 
 </head>
 <body class="home">
@@ -428,7 +146,7 @@
                                         <div class="collapse navbar-collapse">
                                             <ul class="nav navbar-nav lgx-nav">
                                                 <li>
-                                                    <a href="index.html" class="active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
+                                                    <a href="index.html" class="active">Home</a>
                                                 <li>
                                                 <li><a class="lgx-scroll active" href="#lgx-about">About</a></li>
                                                 <li><a class="lgx-scroll" href="#lgx-courses">Courses</a></li>
@@ -554,6 +272,369 @@
     </div>
 </section>
 <!--ABOUT END-->
+<!--LEAD FORM + SLIDER-->
+<section>
+    <div id="lgx-lead" class="jp-lead">
+        <div class="lgx-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="jp-lead-card">
+                            <h3>Get a Free Counseling Call</h3>
+                            <p>Share your details and our team will reach out with the right plan for your judiciary or prosecutor preparation.</p>
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Full Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <button type="submit" class="lgx-btn lgx-btn-sm">Request Callback</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="jp-lead-carousel">
+                            <div id="jp-lead-carousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#jp-lead-carousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#jp-lead-carousel" data-slide-to="1"></li>
+                                    <li data-target="#jp-lead-carousel" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="assets/img/banner.png" alt="Judiciary Preparation Banner">
+                                        <div class="carousel-caption">
+                                            <h4>Judiciary Foundation Batch</h4>
+                                            <p>Complete preparation with mentorship and weekly tests.</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="assets/img/blog-couese.jpeg" alt="Mains Answer Writing">
+                                        <div class="carousel-caption">
+                                            <h4>Mains Answer Writing</h4>
+                                            <p>Structure, speed, and clarity with guided practice.</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="assets/img/pg.jpeg" alt="Prosecutor Batch">
+                                        <div class="carousel-caption">
+                                            <h4>Prosecutor Batch</h4>
+                                            <p>Foundation + test series for prosecutor exams.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#jp-lead-carousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#jp-lead-carousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--LEAD FORM + SLIDER END-->
+<!--RESULTS-->
+<section>
+    <div id="lgx-results" class="jp-results">
+        <div class="lgx-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading">
+                            <h2 class="heading-title">Our Results</h2>
+                            <h4 class="heading-subtitle">Student Rankings & Selections</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row jp-results-wrap">
+                    <div class="col-xs-12 col-md-3">
+                        <div class="jp-results-filter">
+                            <h4>Filter by Year</h4>
+                            <button type="button" class="active" data-year="all">All Years</button>
+                            <button type="button" data-year="2025">2025</button>
+                            <button type="button" data-year="2024">2024</button>
+                            <button type="button" data-year="2023">2023</button>
+                            <button type="button" data-year="2022">2022</button>
+                            <button type="button" data-year="2021">2021</button>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-9">
+                        <div class="jp-results-grid" id="jp-results-grid">
+                            <article class="jp-result-card" data-year="2025">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">1</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher1.jpg" alt="Lovnish Jagdahne">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Lovnish Jagdahne</h4>
+                                    <p>IGP</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2025">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">2</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher2.jpg" alt="Ishwar Dayal Patel">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Ishwar Dayal Patel</h4>
+                                    <p>IGP</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2025">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">3</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher3.jpg" alt="Riya Mandhanya">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Riya Mandhanya</h4>
+                                    <p>MPCJ Test Series</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2024">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">5</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher4.jpg" alt="Monika Sahu">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Monika Sahu</h4>
+                                    <p>Test Series</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2024">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">7</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher5.jpg" alt="Priya Darshan Goswami">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Priya Darshan Goswami</h4>
+                                    <p>Test Series</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2024">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">9</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher6.jpg" alt="Vishakha Gatwar">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Vishakha Gatwar</h4>
+                                    <p>IGP</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2023">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">11</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher7.jpg" alt="Rishabh Rai">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Rishabh Rai</h4>
+                                    <p>Classroom Contact Program</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2023">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">14</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher8.jpg" alt="Ayushi Jain">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Ayushi Jain</h4>
+                                    <p>Classroom Contact Program</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2023">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">16</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher9.jpg" alt="Aditi Sanodiya">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Aditi Sanodiya</h4>
+                                    <p>MPCJ Test Series</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2022">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">18</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher10.jpg" alt="Anshul Srivastava">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Anshul Srivastava</h4>
+                                    <p>IGP</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2022">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">32</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher11.jpg" alt="Aman Shrivastav">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Aman Shrivastav</h4>
+                                    <p>Classroom Contact Program</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2022">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">34</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher12.jpg" alt="Dwji Singh Sengar">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Dwji Singh Sengar</h4>
+                                    <p>Test Series</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2021">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">35</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher13.jpg" alt="Bhavya Gupta">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Bhavya Gupta</h4>
+                                    <p>Classroom Contact Program</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2021">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">37</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher14.jpg" alt="Nandini Patel">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Nandini Patel</h4>
+                                    <p>IGP</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2021">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">38</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher15.jpg" alt="Nandini Sharma">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Nandini Sharma</h4>
+                                    <p>Test Series</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2021">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">39</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher16.jpg" alt="Aakarsh Mishra">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Aakarsh Mishra</h4>
+                                    <p>Classroom Contact Program</p>
+                                </div>
+                            </article>
+                            <article class="jp-result-card" data-year="2021">
+                                <div class="jp-result-top">
+                                    <div class="jp-result-rank">
+                                        <div class="jp-result-rank-label">RANK</div>
+                                        <div class="jp-result-rank-number">41</div>
+                                    </div>
+                                    <div class="jp-result-photo">
+                                        <img src="assets/img/teachers/teacher17.jpg" alt="Muskan Arora">
+                                    </div>
+                                </div>
+                                <div class="jp-result-info">
+                                    <h4>Muskan Arora</h4>
+                                    <p>IGP</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--RESULTS END-->
 <!--SERVICE-->
 <section>
     <div id="lgx-services" class="lgx-services"> <!--lgx-services-white-->
@@ -565,7 +646,7 @@
                             <span class="icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
                             <h2 class="title"><a href="#">Daily Doubt Clearing</a></h2>
                             <p>Get daily support to keep concepts crystal clear and momentum steady.</p>
-                            <a class="lgx-btn-simple" href="#">Read More</a>
+                            <!-- <a class="lgx-btn-simple" href="#">Read More</a> -->
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
@@ -573,7 +654,7 @@
                             <span class="icon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
                             <h2 class="title"><a href="#">Mains Answer Writing</a></h2>
                             <p>Build structure, speed, and clarity with guided answer writing practice.</p>
-                            <a class="lgx-btn-simple" href="#">Read More</a>
+                            <!-- <a class="lgx-btn-simple" href="#">Read More</a> -->
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
@@ -581,7 +662,7 @@
                             <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
                             <h2 class="title"><a href="#">Weekly Tests</a></h2>
                             <p>Stay exam-ready with regular objective and subjective assessments.</p>
-                            <a class="lgx-btn-simple" href="#">Read More</a>
+                            <!-- <a class="lgx-btn-simple" href="#">Read More</a> -->
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
@@ -589,7 +670,7 @@
                             <span class="icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
                             <h2 class="title"><a href="#">Bilingual Teaching</a></h2>
                             <p>Classes in English and Hindi to match your learning comfort.</p>
-                            <a class="lgx-btn-simple" href="#">Read More</a>
+                            <!-- <a class="lgx-btn-simple" href="#">Read More</a> -->
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
@@ -597,7 +678,7 @@
                             <span class="icon"><i class="fa fa-certificate" aria-hidden="true"></i></span>
                             <h2 class="title"><a href="#">Library Access</a></h2>
                             <p>Access curated resources that sharpen reading and research habits.</p>
-                            <a class="lgx-btn-simple" href="#">Read More</a>
+                            <!-- <a class="lgx-btn-simple" href="#">Read More</a> -->
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
@@ -605,7 +686,7 @@
                             <span class="icon"><i class="fa fa-language" aria-hidden="true"></i></span>
                             <h2 class="title"><a href="#">Current Affairs Routine</a></h2>
                             <p>Daily updates to keep you aligned with evolving legal context.</p>
-                            <a class="lgx-btn-simple" href="#">Read More</a>
+                            <!-- <a class="lgx-btn-simple" href="#">Read More</a> -->
                         </div>
                     </div>
                 </div>
@@ -1472,6 +1553,30 @@
 <!-- instafeed js -->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>-->
 <script src="assets/libs/instafeed.min.js"></script>
+
+<script>
+    (function () {
+        var filterButtons = document.querySelectorAll('.jp-results-filter button');
+        var cards = document.querySelectorAll('.jp-result-card');
+        if (!filterButtons.length || !cards.length) {
+            return;
+        }
+
+        for (var i = 0; i < filterButtons.length; i += 1) {
+            filterButtons[i].addEventListener('click', function () {
+                for (var j = 0; j < filterButtons.length; j += 1) {
+                    filterButtons[j].classList.remove('active');
+                }
+                this.classList.add('active');
+                var year = this.getAttribute('data-year');
+                for (var k = 0; k < cards.length; k += 1) {
+                    var match = year === 'all' || cards[k].getAttribute('data-year') === year;
+                    cards[k].style.display = match ? '' : 'none';
+                }
+            });
+        }
+    })();
+</script>
 
 <!-- CUSTOM SCRIPT  -->
 <script src="assets/js/custom.script.js"></script>
