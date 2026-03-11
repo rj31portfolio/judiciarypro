@@ -6,7 +6,7 @@
             --jp-edu-card: #ffffff;
             --jp-edu-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
         }
-
+      
         .jp-edu-banner {
             background-image: url(https://static.vecteezy.com/system/resources/thumbnails/007/233/624/small_2x/brick-black-wall-texture-background-dark-brickwork-pattern-block-stone-structure-backdrop-dark-brick-wall-realistic-template-abstract-modern-wallpaper-design-illustration-vector.jpg);
             padding: 80px 0 90px;
@@ -77,7 +77,10 @@
             font-size: 16px;
             padding: 4px;
         }
-
+         .collapse.in {
+            display: block;
+            background-color: #111;
+        }
         .jp-edu-phone .jp-edu-flag {
             width: 26px;
             height: 18px;
@@ -122,6 +125,106 @@
         .jp-edu-help a {
             color: var(--jp-edu-accent);
             font-weight: 600;
+        }
+
+        .jp-signup-panel {
+            margin-top: 18px;
+            max-width: 420px;
+        }
+
+        .jp-course-otp {
+            margin-top: 16px;
+        }
+
+        .jp-otp-step {
+            margin-top: 12px;
+            display: none;
+        }
+
+        .jp-otp-actions {
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 12px;
+        }
+
+        .jp-otp-link {
+            background: transparent;
+            border: none;
+            padding: 0;
+            color: var(--jp-edu-accent);
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .jp-otp-link:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        .jp-otp-timer {
+            color: var(--jp-edu-muted);
+        }
+
+        .jp-signup-form {
+            margin-top: 6px;
+        }
+
+        .jp-signup-form .form-control {
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .jp-signup-form textarea.form-control {
+            height: auto;
+        }
+
+        .jp-signup-form .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .jp-signup-submit {
+            width: 100%;
+            border: none;
+            background: var(--jp-edu-accent);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(47, 98, 255, 0.25);
+        }
+
+        .jp-signup-status {
+            margin-top: 8px;
+            min-height: 18px;
+        }
+
+        .jp-signup-modal {
+            border-radius: 16px;
+            background: #5a4848;
+            color: #fff;
+        }
+
+        .jp-signup-modal .modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .jp-signup-modal .modal-title {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .jp-signup-modal .close {
+            color: #fff;
+            opacity: 0.8;
         }
 
         .jp-edu-tutors {
@@ -231,6 +334,98 @@
             transform: rotate(-20deg);
         }
 
+        .jp-edu-courses {
+            
+            
+            border-radius: 22px;
+            padding: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.28);
+            backdrop-filter: blur(8px);
+        }
+
+        .jp-edu-courses-head {
+            margin-bottom: 18px;
+        }
+
+        .jp-edu-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255, 182, 47, 0.16);
+            color: var(--jp-edu-accent);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .jp-edu-courses-head h3 {
+            margin: 10px 0 6px;
+            color: var(--jp-edu-ink);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .jp-edu-courses-head p {
+            margin: 0;
+            color: var(--jp-edu-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .jp-edu-courses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .jp-edu-course-card {
+            background: rgba(17, 24, 39, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 14px;
+            min-height: 118px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .jp-edu-course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.35);
+            border-color: rgba(255, 182, 47, 0.4);
+        }
+
+        .jp-edu-course-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 182, 47, 0.2);
+            color: var(--jp-edu-accent);
+            font-size: 16px;
+        }
+
+        .jp-edu-course-card h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .jp-edu-course-card p {
+            margin: 0;
+            font-size: 12px;
+            color: rgba(240, 240, 243, 0.78);
+            line-height: 1.5;
+        }
+
         @media (max-width: 991px) {
             .jp-edu-hero {
                 flex-direction: column;
@@ -247,6 +442,10 @@
 
             .jp-edu-card.top {
                 right: 10px;
+            }
+
+            .jp-edu-courses {
+                max-width: 520px;
             }
         }
 
@@ -277,6 +476,14 @@
 
             .jp-edu-card.bottom {
                 left: 0;
+            }
+
+            .jp-edu-courses {
+                padding: 20px;
+            }
+
+            .jp-edu-courses-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -317,7 +524,7 @@
             position: relative;
             background: #fff;
             border-radius: 16px;
-            padding: 22px 22px 24px;
+            padding: 0;
             box-shadow: 0 12px 24px rgba(18, 18, 18, 0.08);
             border: 1px solid rgba(0, 0, 0, 0.06);
             transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
@@ -387,6 +594,49 @@
             color: #8a5c14;
         }
 
+        .jp-course-link {
+            display: flex;
+            flex-direction: column;
+            color: inherit;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .jp-course-media {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .jp-course-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .jp-course-card:hover .jp-course-media img {
+            transform: scale(1.05);
+        }
+
+        .jp-course-body {
+            padding: 20px 22px 22px;
+        }
+
+        .jp-course-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #8a5c14;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
         @media (max-width: 991px) {
             .jp-courses-cards {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -403,6 +653,299 @@
             }
 
             .jp-courses-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .jp-course-media {
+                height: 160px;
+            }
+        }
+
+        .jp-course-detail-hero {
+            padding: 70px 0 60px;
+            background-image: url(https://res.cloudinary.com/df5lywd7h/image/upload/v1772186811/JudiciaryPRO_ppt_doq0dk.jpg);
+            color: #fff;
+        }
+
+        .jp-course-hero-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 28px;
+            align-items: center;
+        }
+
+        .jp-course-pill {
+            display: inline-flex;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255, 182, 47, 0.18);
+            color: #ffb62f;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .jp-course-hero-inner h1 {
+            color: #fff;
+            margin: 14px 0 10px;
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .jp-course-hero-inner p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .jp-course-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .jp-course-hero-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .jp-course-hero-card h3 {
+            color: #ffcc66;
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .jp-course-hero-card ul {
+            margin: 12px 0 0;
+            padding-left: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .jp-course-detail-section {
+            padding: 60px 0;
+            background: #f7f7f9;
+        }
+
+        .jp-course-detail-section.alt {
+            background: #fff;
+        }
+
+        .jp-course-detail-card {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 26px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 16px 30px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .jp-course-detail-media img {
+            width: 100%;
+            height: 100%;
+            min-height: 240px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.12);
+        }
+
+        .jp-course-detail-content h2 {
+            margin-top: 0;
+            font-size: 26px;
+            font-weight: 800;
+            color: #1b1b1b;
+        }
+
+        .jp-course-detail-content p {
+            color: #5b5b5b;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .jp-course-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .jp-course-detail-grid h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 0 8px;
+            color: #8a5c14;
+        }
+
+        .jp-course-detail-grid ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #5b5b5b;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .jp-course-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 18px;
+            border-radius: 10px;
+            background: #d7a338;
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            box-shadow: 0 10px 18px rgba(215, 163, 56, 0.3);
+        }
+
+        .jp-course-cta-btn:hover {
+            background: #c7922d;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 991px) {
+            .jp-course-hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .jp-course-detail-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .jp-course-hero-inner h1 {
+                font-size: 30px;
+            }
+
+            .jp-course-detail-section {
+                padding: 50px 0;
+            }
+
+            .jp-course-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .jp-course-info-section {
+            padding: 55px 0;
+            background: linear-gradient(135deg, #f9f6f1 0%, #ffffff 50%, #f3f4ff 100%);
+        }
+
+        .jp-course-info-section.alt {
+            background: #fff;
+        }
+
+        .jp-course-info-head {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .jp-course-info-head h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin: 0 0 8px;
+            color: #1b1b1b;
+        }
+
+        .jp-course-info-head p {
+            margin: 0 auto;
+            max-width: 720px;
+            color: #5b5b5b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .jp-course-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .jp-course-info-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.08);
+        }
+
+        .jp-course-info-card h4 {
+            margin: 0 0 8px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #8a5c14;
+        }
+
+        .jp-course-info-card ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #5b5b5b;
+        }
+
+        .jp-course-cta-banner {
+            margin-top: 26px;
+            background: #1f2937;
+            color: #fff;
+            border-radius: 18px;
+            padding: 20px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .jp-course-cta-banner h3 {
+            color: #fff;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .jp-course-cta-banner p {
+            margin: 6px 0 0;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .jp-course-cta-banner .jp-course-cta-btn {
+            white-space: nowrap;
+        }
+
+        .jp-course-faq {
+            margin-top: 24px;
+        }
+
+        .jp-course-faq .panel {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 20px rgba(18, 18, 18, 0.08);
+        }
+
+        @media (max-width: 991px) {
+            .jp-course-info-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .jp-course-cta-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .jp-course-info-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -539,7 +1082,7 @@
         }
 
         .jp-about-section {
-            padding: 70px 0;
+            
             background: linear-gradient(135deg, #ffffff 0%, #f7f4ee 45%, #f4f6ff 100%);
         }
 
@@ -661,9 +1204,9 @@
         }
 
         @media (max-width: 767px) {
-            .jp-about-section {
+            /* .jp-about-section {
                 padding: 60px 0;
-            }
+            } */
 
             .jp-about-card h2 {
                 font-size: 22px;
@@ -671,7 +1214,7 @@
         }
 
         .jp-contact-section {
-            padding: 70px 0;
+            /* padding: 70px 0; */
             background: linear-gradient(135deg, #f9f6f1 0%, #ffffff 45%, #f4f6ff 100%);
         }
 
@@ -733,6 +1276,109 @@
             color: #5b5b5b;
         }
 
+        .jp-contact-head {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .jp-contact-subtitle {
+            color: #5b5b5b;
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+
+        .jp-branch-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .jp-branch-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .jp-branch-map iframe {
+            width: 100%;
+            height: 260px;
+            border: 0;
+            display: block;
+        }
+
+        .jp-branch-info {
+            padding: 18px 20px 20px;
+        }
+
+        .jp-branch-info h3 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1b1b1b;
+        }
+
+        .jp-branch-info p {
+            margin: 0 0 10px;
+            color: #5b5b5b;
+            font-size: 14px;
+        }
+
+        .jp-branch-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #5b5b5b;
+            font-size: 13px;
+            display: grid;
+            gap: 6px;
+        }
+
+        .jp-enquiry-section {
+            padding: 60px 0 80px;
+        }
+
+        .jp-enquiry-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 16px 30px rgba(33, 42, 63, 0.12);
+            text-align: center;
+        }
+
+        .jp-enquiry-card h2 {
+            margin: 0 0 8px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #1b1b1b;
+        }
+
+        .jp-enquiry-card p {
+            margin: 0 0 18px;
+            color: #5b5b5b;
+            font-size: 14px;
+        }
+
+        .jp-enquiry-card .lgx-contactform {
+            text-align: left;
+        }
+
+        @media (max-width: 991px) {
+            .jp-branch-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .jp-branch-map iframe {
+                height: 240px;
+            }
+
+            .jp-enquiry-card {
+                padding: 24px;
+            }
+        }
+
         @media (max-width: 767px) {
             .jp-contact-section {
                 padding: 60px 0;
@@ -756,6 +1402,18 @@
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
+        }
+
+        .jp-results-grid.owl-carousel {
+            display: block;
+        }
+
+        .jp-results-grid.owl-carousel .jp-result-card {
+            margin: 8px 10px 20px;
+        }
+
+        .jp-results-grid.owl-carousel .owl-stage-outer {
+            padding: 4px 0 6px;
         }
 
         .jp-result-card {
@@ -886,9 +1544,9 @@
         }
 
         @media (max-width: 575px) {
-            .jp-results {
+            /* .jp-results {
                 padding: 60px 0;
-            }
+            } */
 
             .jp-results-grid {
                 grid-template-columns: 1fr;
@@ -899,8 +1557,223 @@
             }
         }
 
+        /* Mobile course filter visibility + scroll */
+        @media (max-width: 767px) {
+            .lgx-filter-area {
+                display: block;
+            }
+
+            .lgx-filter {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 8px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 8px;
+                margin-bottom: 12px;
+            }
+
+            .lgx-filter li {
+                display: inline-flex;
+                margin-bottom: 0;
+                white-space: nowrap;
+            }
+
+            .lgx-filter li a {
+                white-space: nowrap;
+            }
+        }
+
+        .jp-footer-actions {
+            position: fixed;
+            left: 20px;
+            right: 20px;
+            bottom: 18px;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .jp-footer-btn {
+            pointer-events: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .jp-footer-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.24);
+            color: #fff;
+        }
+
+        .jp-call-btn {
+            background: linear-gradient(135deg, #f6b332 0%, #d98a1b 100%);
+            position: absolute;
+            left: 0;
+        }
+
+        .jp-whatsapp-btn {
+            background: linear-gradient(135deg, #2dbf62 0%, #168f45 100%);
+            position: absolute;
+            right: 0;
+        }
+
+        @media (max-width: 575px) {
+            .jp-footer-actions {
+                left: 12px;
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .jp-footer-btn {
+                padding: 10px 14px;
+                font-size: 12px;
+            }
+        }
+
+        /* Prevent event cards from growing vertically on hover */
+        .lgx-single-event .thumb {
+            width: 115px;
+            max-width: 115px;
+            overflow: hidden;
+            transform: none !important;
+        }
+
+        .lgx-single-event .thumb img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .lgx-single-event:hover .thumb img {
+            transform: scale(1.06);
+        }
+
+        /* Stop hover from scaling the thumb container (keeps card height stable) */
+        .lgx-single-event:hover .thumb {
+            transform: none !important;
+        }
+
+        /* Keep borders from affecting layout on hover */
+        .lgx-featured-event,
+        .lgx-single-event {
+            box-sizing: border-box;
+        }
+
+        /* Keep featured event content below the image (match other cards) */
+        .lgx-featured-event figure {
+            position: relative;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .lgx-featured-event figure > a,
+        .lgx-featured-event figure > a img {
+            display: block;
+            width: 100%;
+            /* height: 260px; */
+            object-fit: cover;
+        }
+
+        .lgx-featured-event figure figcaption {
+            position: static;
+            inset: auto;
+            height: auto;
+            background: #fff;
+            padding: 18px 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .lgx-featured-event figure figcaption .figcaption {
+            display: none;
+        }
+
+        .lgx-featured-event figure figcaption .event-info {
+            position: static;
+            margin: 0;
+        }
+
+        .lgx-featured-event figure figcaption .event-info p {
+            color: #5b5b5b;
+        }
+
+        .lgx-featured-event figure figcaption .event-info .title,
+        .lgx-featured-event figure figcaption .event-info h3,
+        .lgx-featured-event figure figcaption .event-info h4 {
+            color: #1b1b1b;
+        }
+
+        /* Prevent hover rules from changing featured card height */
+        .lgx-featured-event:hover figure figcaption {
+            height: auto;
+        }
+
+        /* Prevent blog cards from growing vertically on hover */
+        .lgx-news-single figure {
+            overflow: hidden;
+            position: relative;
+            height: 220px;
+        }
+        .lgx-news-single figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .lgx-news-single figure figcaption {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+        }
+
+        .lgx-news-single:hover figure img {
+            transform: scale(1.04);
+        }
+
+        /* Fix blog author avatar sizing */
+        .lgx-news-single figure figcaption .author img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* News grid: responsive cards (override theme columns/floats) */
+        #lgx-blog.lgx-blog-normal .row {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            column-count: initial !important;
+            column-width: auto !important;
+            column-gap: normal !important;
+        }
+
+        #lgx-blog.lgx-blog-normal .row::before,
+        #lgx-blog.lgx-blog-normal .row::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        #lgx-blog.lgx-blog-normal .row > .lgx-news-single {
+            width: auto !important;
+            margin: 10px !important;
+            float: none !important;
+        }
+
         .jp-lead {
-            padding: 70px 0;
+            /* padding: 70px 0; */
             background: linear-gradient(135deg, #f9f6f1 0%, #fff7e3 45%, #f4f6ff 100%);
             border-top: 1px solid rgba(0, 0, 0, 0.04);
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -946,6 +1819,7 @@
         }
 
         .jp-lead-carousel {
+            margin-top: 20px;
             background: #fff;
             border-radius: 18px;
             padding: 14px;
@@ -967,14 +1841,836 @@
             color: #fff;
         }
 
-        @media (max-width: 991px) {
+        /* @media (max-width: 991px) {
             .jp-lead {
                 padding: 60px 0;
             }
-        }
+        } */
 
         @media (max-width: 767px) {
             .jp-lead-card {
                 margin-bottom: 20px;
+            }
+        }
+
+        /* Header top bar color fix (remove white strip) */
+        .lgx-header .header-top {
+            background: linear-gradient(90deg, #1f2230 0%, #2b2f45 50%, #1f2230 100%);
+            color: #f4f4f4;
+        }
+
+        .lgx-header .header-top .contact,
+        .lgx-header .header-top .right-menu {
+            padding: 8px 0;
+        }
+
+        .lgx-header .header-top .list-inline {
+            margin: 0;
+        }
+
+        .lgx-header .header-top .contact li,
+        .lgx-header .header-top .right-menu li,
+        .lgx-header .header-top a {
+            color: #f4f4f4;
+        }
+
+        .lgx-header .header-top a:hover {
+            color: #ffb62f;
+        }
+
+        .lgx-header .header-top i {
+            color: #ffb62f;
+        }
+
+        /* Remove any stray top gap above the header */
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .lgx-header,
+        .lgx-header .header-top,
+        .lgx-header .header-top .header-top-inner {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Course detail layout + image sizing */
+        .lgx-course.lgx-normal-single article > header {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .lgx-course.lgx-normal-single article > header .text-area {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 22px;
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow:hidden;
+        }
+
+        .lgx-course.lgx-normal-single article > header figure {
+            margin: 0;
+        }
+
+        .lgx-course.lgx-normal-single article > header figure img {
+            width: 100%;
+            height: 320px;
+            object-fit: contain;
+            border-radius: 18px;
+            box-shadow: 0 16px 30px rgba(33, 42, 63, 0.18);
+        }
+
+        .lgx-course.lgx-normal-single .course-hitcourse-payment .lgx-btn {
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area {
+            overflow: visible;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area,
+        .lgx-course.lgx-normal-single .course-hits-area .course-hitcourse-payment {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area {
+            flex-wrap: wrap;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area .course-hit,
+        .lgx-course.lgx-normal-single .course-hits-area .course-hitcourse-payment {
+            float: none;
+            width: auto !important;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area .course-hit {
+            flex: 1 1 320px;
+            margin-bottom: 0;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area .course-hitcourse-payment {
+            flex: 0 0 auto;
+            justify-content: flex-end;
+            white-space: nowrap;
+        }
+
+        .lgx-course.lgx-normal-single .course-hits-area .course-hitcourse-payment .course-price {
+            margin-right: 16px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 1199px) {
+            .lgx-course.lgx-normal-single .course-hits-area .course-hitcourse-payment {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .lgx-course.lgx-normal-single .course-hits-area {
+                flex-wrap: nowrap;
+            }
+        }
+
+        /* News detail layout + image sizing */
+        .lgx-news.lgx-news-single article > header {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .lgx-news.lgx-news-single article > header .text-area {
+            order: 1;
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 22px;
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .lgx-news.lgx-news-single article > header figure {
+            order: 2;
+            margin: 0;
+        }
+
+        .lgx-news.lgx-news-single article > header figure img {
+            width: 100%;
+            /* height: 320px; */
+            object-fit: contain;
+            background: #f4f6ff;
+            border-radius: 18px;
+            box-shadow: 0 16px 30px rgba(33, 42, 63, 0.18);
+        }
+
+        .lgx-news.lgx-news-single article > section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-top: 24px;
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .lgx-news.lgx-news-single article > section p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 991px) {
+            .lgx-news.lgx-news-single article > header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Event detail layout + date styling */
+        .lgx-event.lgx-normal-single article > header {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .lgx-event.lgx-normal-single article > header .text-area {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 22px;
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .lgx-event.lgx-normal-single article > header figure {
+            margin: 0;
+        }
+
+        .lgx-event.lgx-normal-single article > header figure img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 16px 30px rgba(33, 42, 63, 0.18);
+        }
+
+        .lgx-event.lgx-normal-single article > section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-top: 24px;
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .lgx-event.lgx-normal-single article > section p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .jp-event-date {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #d7a338 0%, #f0c26c 100%);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 14px 26px rgba(215, 163, 56, 0.35);
+            margin-bottom: 16px;
+        }
+
+        .jp-event-date .jp-event-month {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .jp-event-date .jp-event-day {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .jp-event-date .jp-event-year {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .jp-event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 16px;
+            font-size: 13px;
+            color: #5b5b5b;
+            margin: 10px 0 12px;
+        }
+
+        .jp-event-meta i {
+            color: #d7a338;
+            margin-right: 6px;
+        }
+
+        .jp-event-lead {
+            font-size: 14px;
+            color: #5b5b5b;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 991px) {
+            .lgx-course.lgx-normal-single article > header {
+                grid-template-columns: 1fr;
+            }
+
+            .lgx-course.lgx-normal-single article > header figure img {
+                height: 260px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .lgx-course.lgx-normal-single article > header figure img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .lgx-event.lgx-normal-single article > header {
+                grid-template-columns: 1fr;
+            }
+
+            .lgx-event.lgx-normal-single article > header figure img {
+                height: 260px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .lgx-event.lgx-normal-single article > header figure img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .lgx-news.lgx-news-single article > header figure img {
+                height: 260px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .lgx-news.lgx-news-single article > header figure img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            #lgx-blog.lgx-blog-normal .row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 767px) {
+            #lgx-blog.lgx-blog-normal .row {
+                grid-template-columns: 1fr;
+            }
+        }
+  /* Privacy Policy page */
+        .jp-policy-banner {
+            background-image: linear-gradient(rgba(18, 22, 35, 0.62), rgba(18, 22, 35, 0.62)), url("assets/img/bannerabout.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .jp-policy-section {
+            padding: 70px 0;
+            background: linear-gradient(135deg, #f9f7f2 0%, #ffffff 45%, #f2f5ff 100%);
+        }
+
+        .jp-policy-intro {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 28px 30px;
+            box-shadow: 0 16px 32px rgba(33, 42, 63, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .jp-policy-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(215, 163, 56, 0.18);
+            color: #8a5c14;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .jp-policy-intro h1 {
+            font-size: 30px;
+            font-weight: 800;
+            margin: 0 0 8px;
+            color: #1b1b1b;
+        }
+
+        .jp-policy-meta {
+            font-size: 13px;
+            color: #6b6b6b;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .jp-policy-lead {
+            color: #4d4d4d;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .jp-policy-highlight {
+            margin-bottom: 26px;
+        }
+
+        .jp-policy-highlight-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 22px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.08);
+            min-height: 180px;
+        }
+
+        .jp-policy-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(215, 163, 56, 0.15);
+            color: #d7a338;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .jp-policy-highlight-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 8px;
+            color: #1b1b1b;
+        }
+
+        .jp-policy-highlight-card p {
+            color: #5b5b5b;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .jp-policy-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 26px 28px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.07);
+        }
+
+        .jp-policy-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 12px;
+            color: #1b1b1b;
+        }
+
+        .jp-policy-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 16px 0 10px;
+            color: #3c2c0f;
+        }
+
+        .jp-policy-card p {
+            color: #5b5b5b;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .jp-policy-list {
+            padding-left: 18px;
+            margin: 10px 0 0;
+            color: #5b5b5b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .jp-policy-list li + li {
+            margin-top: 6px;
+        }
+
+        .jp-policy-note {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #3b3b3b;
+        }
+
+        .jp-policy-columns {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 12px;
+        }
+
+        .jp-policy-column {
+            background: #f9f8f4;
+            border-radius: 14px;
+            padding: 16px 18px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .jp-policy-subsection {
+            border-left: 4px solid rgba(215, 163, 56, 0.6);
+            padding-left: 16px;
+            margin-top: 16px;
+        }
+
+        .jp-policy-contact-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 18px;
+            background: #f9f7f2;
+            border-radius: 14px;
+            padding: 18px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .jp-policy-contact-card a {
+            color: #8a5c14;
+            font-weight: 600;
+        }
+
+        @media (max-width: 991px) {
+            .jp-policy-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .jp-policy-contact-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .jp-policy-section {
+                padding: 60px 0;
+            }
+
+            .jp-policy-intro {
+                padding: 24px;
+            }
+
+            .jp-policy-card {
+                padding: 22px;
+            }
+        }
+
+        /* Materials */
+        .jp-material-banner {
+            background-image: linear-gradient(rgba(18, 22, 35, 0.65), rgba(18, 22, 35, 0.65)), url("assets/img/bannerabout.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .jp-materials {
+            background: linear-gradient(135deg, #f9f6f1 0%, #ffffff 45%, #f4f6ff 100%);
+            padding: 60px 0;
+        }
+
+        .jp-material-grid {
+            display: block;
+        }
+
+        .jp-material-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .jp-material-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 36px rgba(18, 18, 18, 0.12);
+        }
+
+        .jp-material-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .jp-material-media {
+            height: 190px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .jp-material-body {
+            padding: 18px 20px 20px;
+        }
+
+        .jp-material-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(215, 163, 56, 0.16);
+            color: #8a5c14;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .jp-material-body h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0 0 8px;
+            color: #1b1b1b;
+        }
+
+        .jp-material-body p {
+            font-size: 13px;
+            color: #5b5b5b;
+            line-height: 1.6;
+            margin: 0 0 12px;
+        }
+
+        .jp-material-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            color: #6b6b6b;
+        }
+
+        .jp-material-meta i {
+            color: #d7a338;
+            margin-right: 6px;
+        }
+
+        .jp-material-cta {
+            margin-top: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #8a5c14;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .jp-material-detail {
+            padding: 60px 0;
+            background: #f7f7f9;
+        }
+
+        .jp-material-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 24px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 16px 32px rgba(18, 18, 18, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .jp-material-hero h1 {
+            margin: 12px 0 10px;
+            font-size: 30px;
+            font-weight: 800;
+            color: #1b1b1b;
+        }
+
+        .jp-material-hero p {
+            color: #5b5b5b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .jp-material-hero-meta {
+            display: flex;
+            gap: 14px;
+            font-size: 12px;
+            color: #6b6b6b;
+            margin-top: 10px;
+        }
+
+        .jp-material-hero-meta i {
+            color: #d7a338;
+            margin-right: 6px;
+        }
+
+        .jp-material-hero-media img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.12);
+        }
+
+        .jp-material-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .jp-material-gallery-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 10px 22px rgba(18, 18, 18, 0.1);
+        }
+
+        .jp-material-card-block {
+            background: #fff;
+            border-radius: 18px;
+            padding: 22px 24px;
+            box-shadow: 0 14px 28px rgba(18, 18, 18, 0.07);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-bottom: 20px;
+        }
+
+        .jp-material-card-block h3 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1b1b1b;
+        }
+
+        .jp-material-resources .jp-material-pdf {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            background: #f9f7f2;
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+        }
+
+        .jp-material-pdf-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #3b3b3b;
+        }
+
+        .jp-material-pdf-info i {
+            color: #c53030;
+            font-size: 16px;
+        }
+
+        .jp-pdf-download {
+            border: none;
+            background: #d7a338;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .jp-material-videos {
+            margin-top: 10px;
+        }
+
+        .jp-material-video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .jp-material-video {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 24px rgba(18, 18, 18, 0.08);
+        }
+
+        .jp-material-video-thumb {
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .jp-material-video span {
+            display: block;
+            padding: 12px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1b1b1b;
+        }
+
+        .jp-material-video i {
+            color: #c4302b;
+            margin-right: 6px;
+        }
+
+        .jp-lead-modal {
+            border-radius: 16px;
+            background: #ffffff;
+        }
+
+        .jp-lead-modal .modal-title {
+            font-weight: 700;
+        }
+
+        .jp-lead-note {
+            font-size: 13px;
+            color: #5b5b5b;
+            margin-bottom: 16px;
+        }
+
+        .jp-lead-submit {
+            width: 100%;
+            border: none;
+            background: #d7a338;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 10px 14px;
+            border-radius: 10px;
+        }
+
+        .jp-lead-status {
+            margin-top: 8px;
+            min-height: 18px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 991px) {
+            .jp-material-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .jp-material-hero-media img {
+                height: 220px;
             }
         }

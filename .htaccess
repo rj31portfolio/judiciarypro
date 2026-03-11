@@ -1,0 +1,21 @@
+Options -MultiViews
+RewriteEngine On
+
+# Redirect explicit .php URLs to clean URLs.
+# Leading slash avoids double subdirectory segments when deployed in /judiciarypro.
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.php([?\s]) [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Route root to index.php
+RewriteRule ^$ index.php [L]
+
+# Detail pages with slugs
+RewriteRule ^news/([^/]+)/?$ news-single.php?slug=$1 [L,QSA]
+RewriteRule ^event/([^/]+)/?$ event.php?slug=$1 [L,QSA]
+RewriteRule ^course/([^/]+)/?$ course.php?slug=$1 [L,QSA]
+RewriteRule ^material/([^/]+)/?$ material.php?slug=$1 [L,QSA]
+
+# Serve clean URLs if the file or directory doesn't exist.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ $1.php [L,QSA]

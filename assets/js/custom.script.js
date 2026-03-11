@@ -358,6 +358,36 @@
                 }
             });
         }
+
+        /*=========================================================================
+         ===  RESULTS SLIDER
+         ========================================================================== */
+        if ($('#jp-results-carousel').length) {
+            $("#jp-results-carousel").owlCarousel({
+                margin: 20,
+                items: 3,
+                loop: true,
+                autoplay: true,
+                dots: true,
+                nav: false,
+                autoplayTimeout: 3500,
+                autoplaySpeed: 600,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    640: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                }
+            });
+        }
+        /*=========================================================================
+         ===  RESULTS SLIDER END
+         ========================================================================== */
         /*=========================================================================
          ===  TESTIMONIAL SLIDER END
          ========================================================================== */
@@ -591,8 +621,10 @@
                     },
                     success: function (ajaxResponse) {
                         try {
-                            var ajaxResponse = $.parseJSON(ajaxResponse);
-                            if (ajaxResponse.error) {
+                            if (typeof ajaxResponse === 'string') {
+                                ajaxResponse = $.parseJSON(ajaxResponse);
+                            }
+                            if (ajaxResponse && ajaxResponse.error) {
                                 //for field error
                                 //console.log(ajaxResponse.error_field);
                                 for (var i = 0; i < ajaxResponse.error_field.length; i++) {
@@ -603,28 +635,62 @@
                                     }
                                 }
 
+                            } else if (ajaxResponse) {
+                                if (window.Swal) {
+                                    Swal.fire({icon: 'success', text: ajaxResponse.message});
+                                } else {
+                                    $('.lgx-form-msg').removeClass('alert-danger').addClass('alert-success').text(ajaxResponse.message);
+                                    $('#lgx-form-modal').modal('show');
+                                    alertInterval = setInterval(function () {
+                                        $('#lgx-form-modal').modal('hide');
+                                    }, 5000);
+                                }
+                                $form[0].reset();
+                            }
+                        } catch (e) {
+                            if (window.Swal) {
+                                Swal.fire({icon: 'error', text: 'Sorry, we are failed to contact with you. Please reload the page and try again.'});
                             } else {
-                                $('.lgx-form-msg').removeClass('alert-danger').addClass('alert-success').text(ajaxResponse.message);
+                                $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we are failed to contact with you. Please reload the page and try again.');
                                 $('#lgx-form-modal').modal('show');
                                 alertInterval = setInterval(function () {
                                     $('#lgx-form-modal').modal('hide');
                                 }, 5000);
-                                $form[0].reset();
+                            }
+                        }
+                    },
+                    error: function (argument) {
+                        var errorText = 'Sorry, we can not communicate with you. Please make sure you are connected with internet.';
+                        try {
+                            if (argument && argument.responseJSON && argument.responseJSON.message) {
+                                if (typeof argument.responseJSON.message === 'string') {
+                                    errorText = argument.responseJSON.message;
+                                } else if (argument.responseJSON.message.form) {
+                                    errorText = argument.responseJSON.message.form;
+                                }
+                            } else if (argument && argument.responseText) {
+                                var parsed = $.parseJSON(argument.responseText);
+                                if (parsed && parsed.message) {
+                                    if (typeof parsed.message === 'string') {
+                                        errorText = parsed.message;
+                                    } else if (parsed.message.form) {
+                                        errorText = parsed.message.form;
+                                    }
+                                }
                             }
                         } catch (e) {
-                            $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we are failed to contact with you. Please reload the page and try again.');
+                            // fall back to the default errorText
+                        }
+
+                        if (window.Swal) {
+                            Swal.fire({icon: 'error', text: errorText});
+                        } else {
+                            $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text(errorText);
                             $('#lgx-form-modal').modal('show');
                             alertInterval = setInterval(function () {
                                 $('#lgx-form-modal').modal('hide');
                             }, 5000);
                         }
-                    },
-                    error: function (argument) {
-                        $('.lgx-form-msg').removeClass('alert-success').addClass('alert-danger').text('Sorry, we can not communicate with you. Please make sure you are connected with internet.');
-                        $('#lgx-form-modal').modal('show');
-                        alertInterval = setInterval(function () {
-                            $('#lgx-form-modal').modal('hide');
-                        }, 5000);
                     },
                     complete: function () {
 
@@ -666,8 +732,4 @@
 
 
 })(jQuery);
-
-
-
-
 

@@ -1,0 +1,1 @@
+[03-Mar-2026 14:21:05 UTC] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/viralqls/judiciarypro.com/includes/db.php:1) in /home2/viralqls/judiciarypro.com/assets/php/contact.php on line 64
