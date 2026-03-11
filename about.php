@@ -247,7 +247,6 @@ include __DIR__ . '/includes/header.php';
                                 <h5>Our Philosophy</h5>
                                 <p>"Think like a judge, write like a topper, show up every single day. No shortcuts - just consistent effort, smart strategy, and mentorship you can rely on."</p>
                             </div>
-
                             <div class="teacher-bottom">
                                 <div class="social-connect">
                                     <span class="connect-text">Connect with Sparsh</span>

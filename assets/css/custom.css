@@ -2385,7 +2385,7 @@
         /* Materials */
         .jp-material-banner {
             background-image: linear-gradient(rgba(18, 22, 35, 0.65), rgba(18, 22, 35, 0.65)), url("assets/img/bannerabout.png");
-            background-size: cover;
+            background-size: contain;
             background-position: center;
         }
 
@@ -2420,7 +2420,7 @@
 
         .jp-material-media {
             height: 190px;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
         }
 
@@ -2537,7 +2537,7 @@
 
         .jp-material-gallery-card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             border-radius: 14px;
             box-shadow: 0 10px 22px rgba(18, 18, 18, 0.1);
@@ -2616,7 +2616,7 @@
 
         .jp-material-video-thumb {
             height: 150px;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
         }
 
