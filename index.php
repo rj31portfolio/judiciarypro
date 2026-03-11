@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageKey = 'home';
 $seoDefaults = [
     'meta_title' => 'JudiciaryPRO',
@@ -20,8 +20,7 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
         <div class="row jp-edu-hero">
             <div class="col-xs-12 col-md-6">
                 <h2 class="jp-edu-title">India’s Premier Law Institute
-
- <span>JudiciaryPRO</span></h2>
+                <span>JudiciaryPRO</span></h2>
                 <p class="jp-edu-text">Prepare for Judicial Services Examinations (PCS-J), CLAT PG and CLAT UG with expert mentorship, structured courses, and proven guidance. With 12+ years of experience in legal education, JudiciaryPRO has helped hundreds of aspirants build strong legal foundations and achieve success in competitive law examinations.</p>
                 <div class="jp-signup-panel" id="jp-signup-panel">
                     <div class="jp-edu-search jp-edu-phone">
@@ -191,7 +190,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                             <li>Comprehensive coverage of major & minor law subjects</li>
                             <li>Weekly tests and answer writing practice</li>
                             <li>Personal mentorship and performance evaluation</li>
-                            
                         </ul>
                         <span class="jp-course-cta">View Details <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                     </div>
@@ -930,9 +928,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                                 </figcaption>
                             </figure>
                         </div>
-
-                    
-
                     </div>
                 </div> <!--//.CONAINER-->
             </div>
@@ -1052,7 +1047,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                             </div>
                         </div>
                     </div>
-
                     <!-- Q7 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="jp-faq-h7">
@@ -1068,7 +1062,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                             </div>
                         </div>
                     </div>
-
                     <!-- Q8 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="jp-faq-h8">
@@ -1084,7 +1077,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                             </div>
                         </div>
                     </div>
-
                     <!-- Q9 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="jp-faq-h9">
@@ -1100,7 +1092,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                             </div>
                         </div>
                     </div>
-
                     <!-- Q10 -->
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="jp-faq-h10">
@@ -1116,7 +1107,6 @@ $rankings = db()->query("SELECT * FROM student_rankings WHERE status = 'publishe
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

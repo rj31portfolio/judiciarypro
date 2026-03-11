@@ -138,7 +138,6 @@ include __DIR__ . '/includes/header.php';
                     </ul>
                     <p class="jp-policy-note">Users may disable cookies through their browser settings if desired.</p>
                 </div>
-
                 <div class="jp-policy-card">
                     <h3>5. Third Party Services</h3>
                     <p>JudiciaryPRO may use third-party platforms for:</p>
@@ -178,7 +177,7 @@ include __DIR__ . '/includes/header.php';
                     <div class="jp-policy-subsection">
                         <h4>Classroom & Discipline</h4>
                         <ul class="jp-policy-list">
-                            <li>Students must be seated at least 10 minutes before the lecture begins in case of offline classes. Entry after commencement is subject to the teacher’s discretion.</li>
+                            <li>Students must be seated at least 10 minutes before the lecture begins in case of offline classes. Entry after commencement is subject to the teacherï¿½s discretion.</li>
                             <li>The following are strictly prohibited: reserving classroom seats for friends, carrying eatables inside the classroom, use of mobile phones during lectures.</li>
                             <li>Any act of indiscipline including quarrels, misbehavior, rumor spreading, or damage to institute property will result in immediate termination of admission without refund.</li>
                             <li>Students must not disturb teachers or fellow students during class. Doubts may be raised only when permitted by the teacher.</li>
@@ -206,7 +205,6 @@ include __DIR__ . '/includes/header.php';
                             <li>Audio or video recording of lectures (online or offline) is strictly prohibited.</li>
                         </ul>
                     </div>
-
                     <div class="jp-policy-subsection">
                         <h4>Study Material & Tests</h4>
                         <ul class="jp-policy-list">

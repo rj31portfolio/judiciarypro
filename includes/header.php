@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require __DIR__ . '/bootstrap.php';
 $pageKey = $pageKey ?? 'page';
 $seoDefaults = $seoDefaults ?? [
@@ -199,7 +199,6 @@ $seoMeta = function_exists('seo_merge') ? seo_merge($pageKey, $seoDefaults) : $s
                                                 <li><a class="lgx-scroll" href="events">Events</a></li>
                                                 <li><a class="lgx-scroll" href="news">News</a></li>
                                                 <li><a class="lgx-scroll" href="contact">Contact</a></li>
-
                                             </ul>
                                         </div>
                                     </div>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $pageKey = 'gallery';
 $seoDefaults = [
     'meta_title' => 'Gallery - JudiciaryPRO',
