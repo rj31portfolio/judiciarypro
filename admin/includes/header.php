@@ -175,9 +175,9 @@ $title = $title ?? 'Admin';
             <ul class="nav navbar-nav">
                 <li><a href="courses.php">Courses</a></li>
                 
-                <li><a href="materials.php">Materials</a></li>
+                <!-- <li><a href="materials.php">Materials</a></li>
                 
-                <li><a href="material-leads.php">Material Leads</a></li>
+                <li><a href="material-leads.php">Material Leads</a></li> -->
                 <li><a href="students.php">Student Ranking</a></li>
                 <li><a href="signups.php">Student Signups</a></li>
                 <li><a href="events.php">Events</a></li>

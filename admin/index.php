@@ -90,7 +90,6 @@ include __DIR__ . '/includes/header.php';
         </div>
     </div>
 </div>
-
 <div class="admin-card">
     <h3>Quick Actions</h3>
     <div class="row">

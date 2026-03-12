@@ -174,7 +174,6 @@ include __DIR__ . '/includes/header.php';
         </div>
     </div>
 </section>
-
 <div class="modal fade" id="jp-material-lead-modal" tabindex="-1" role="dialog" aria-labelledby="jpMaterialLeadLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content jp-lead-modal">

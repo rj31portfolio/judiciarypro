@@ -31,7 +31,6 @@ include __DIR__ . '/includes/header.php';
         </div>
     </div>
 </section>
-
 <section class="jp-course-detail-section">
     <div class="container">
         <div class="jp-course-detail-card">
