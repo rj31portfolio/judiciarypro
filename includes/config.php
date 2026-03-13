@@ -25,6 +25,7 @@ return [
     //     'default_robots' => 'index,follow',
     // ],
     // Demo SMS API config (Twilio placeholders).
+
     'sms' => [
         // NimbusIT OTP settings.
         'provider' => 'nimbusit',
@@ -32,10 +33,18 @@ return [
         'base_url' => 'https://nimbusit.biz/api/SmsApi/SendSingleApi',
         'user_id' => 'chinarbiz',
         'password' => 'lbif4972LB',
-        'sender_id' => 'JUDPRO',
+        // DLT values must match your approved template and header.
+        'sender_id' => 'CHNRLI',
         'entity_id' => '1201161216671532442',
         'template_id' => '1707167612312718280',
-        'otp_message' => 'Your JudiciaryPRO OTP is {otp}. It is valid for 5 minutes.',
+        // DLT template uses {#var#} for the OTP variable.
+        'otp_message' => 'Dear user your requested OTP is {#var#} Plz do not share with anyone. CHINAR LAW INSTITUTE {#var#}',
+        // For local XAMPP environments without CA certs.
+        'ssl_verify' => false,
+        // Enable to return provider error details in the JSON response (use false in production).
+        'debug' => false,
+        // Local dev: skip SMS API and return OTP in response.
+        'local_mode' => false,
     ],
     'mail' => [
         'enabled' => true,

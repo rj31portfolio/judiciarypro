@@ -33,6 +33,20 @@ if (strlen($phoneDigits) < 10) {
 }
 $phone = substr($phoneDigits, -10);
 
+if (empty($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) {
+    http_response_code(403);
+    ob_clean();
+    echo json_encode(['ok' => false, 'message' => 'Please verify OTP before submitting your details.']);
+    exit;
+}
+
+if (!empty($_SESSION['otp_phone']) && $_SESSION['otp_phone'] !== $phone) {
+    http_response_code(403);
+    ob_clean();
+    echo json_encode(['ok' => false, 'message' => 'OTP was verified for a different number. Please resend OTP.']);
+    exit;
+}
+
 if ($name === '') {
     http_response_code(400);
     ob_clean();

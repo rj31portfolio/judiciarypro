@@ -299,23 +299,40 @@
             otpVerified = false;
             $send.prop('disabled', true).text('Sending...');
             $.ajax({
-                url: 'ajax/otp.php',
+                url: 'ajax/otp',
                 method: 'POST',
                 dataType: 'json',
                 data: { action: 'send', phone: phone }
             }).done(function (res) {
                 if (res && res.ok) {
-                    showHelp(res.message || 'OTP sent.', false);
+                    var successMsg = res.message || 'OTP sent.';
+                    if (res && res.otp) {
+                        successMsg += ' OTP: ' + res.otp;
+                    }
+                    showHelp(successMsg, false);
                     $otpStep.slideDown(150);
                     startResendTimer();
-                    showAlert(res.message || 'OTP sent.', 'success');
+                    showAlert(successMsg, 'success');
                 } else {
-                    showHelp((res && res.message) || 'Unable to send OTP.', true);
-                    showAlert((res && res.message) || 'Unable to send OTP.', 'error');
+                    var msg = (res && res.message) || 'Unable to send OTP.';
+                    if (res && res.details) {
+                        msg += ' (' + res.details + ')';
+                    }
+                    showHelp(msg, true);
+                    showAlert(msg, 'error');
                 }
-            }).fail(function () {
-                showHelp('Unable to send OTP right now.', true);
-                showAlert('Unable to send OTP right now.', 'error');
+            }).fail(function (xhr) {
+                var msg = 'Unable to send OTP right now.';
+                if (xhr && xhr.responseJSON) {
+                    msg = xhr.responseJSON.message || msg;
+                    if (xhr.responseJSON.details) {
+                        msg += ' (' + xhr.responseJSON.details + ')';
+                    }
+                } else if (xhr && xhr.responseText) {
+                    msg += ' (' + xhr.responseText.slice(0, 120) + ')';
+                }
+                showHelp(msg, true);
+                showAlert(msg, 'error');
             }).always(function () {
                 if (resendRemaining <= 0) {
                     $send.prop('disabled', false).text('Send OTP');
@@ -337,7 +354,7 @@
 
             $verify.prop('disabled', true).text('Verifying...');
             $.ajax({
-                url: 'ajax/otp.php',
+                url: 'ajax/otp',
                 method: 'POST',
                 dataType: 'json',
                 data: { action: 'verify', phone: phone, code: code }
@@ -345,7 +362,12 @@
                 if (res && res.ok) {
                     otpVerified = true;
                     showHelp('OTP verified. Please complete the form below.', false);
+                    $form.find('input[name="phone"]').val(phone);
                     $('#jp-signup-modal').modal('show');
+                    try {
+                        localStorage.setItem('jp_verified_phone', phone);
+                        localStorage.setItem('jp_otp_verified', '1');
+                    } catch (e) {}
                     showAlert('OTP verified. Please complete the form.', 'success');
                 } else {
                     showHelp((res && res.message) || 'Invalid OTP.', true);
@@ -370,6 +392,12 @@
         });
 
         $joinUs.on('click', function () {
+            try {
+                var savedPhone = localStorage.getItem('jp_verified_phone') || '';
+                if (savedPhone) {
+                    $form.find('input[name="phone"]').val(savedPhone);
+                }
+            } catch (e) {}
             $('#jp-signup-modal').modal('show');
         });
 
@@ -382,7 +410,7 @@
 
             var formData = $form.serialize();
             $.ajax({
-                url: 'ajax/signup.php',
+                url: 'ajax/signup',
                 method: 'POST',
                 dataType: 'json',
                 data: formData
@@ -394,6 +422,9 @@
                     }
                     showAlert('Thanks! Your details have been submitted.', 'success');
                     $form[0].reset();
+                    $otpStep.hide();
+                    $send.hide();
+                    $phone.prop('disabled', true);
                 } else {
                     showStatus((res && res.message) || 'Unable to submit details.', true);
                     if ($modalStatus.length) {

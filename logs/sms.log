@@ -1,0 +1,13 @@
+[2026-03-13 10:21:31] OTP request received: method=GET | payload=[]
+[2026-03-13 10:21:31] OTP request blocked: missing phone.
+[2026-03-13 12:10:33] OTP request received: method=POST | payload={"action":"send","phone":"7535898638"}
+[2026-03-13 12:10:33] OTP send request received.
+[2026-03-13 12:10:33] OTP local_mode enabled. OTP=262354 for 75******38
+[2026-03-13 12:10:41] OTP request received: method=POST | payload={"action":"verify","phone":"7535898638","code":"262354"}
+[2026-03-13 12:10:59] OTP request received: method=POST | payload={"action":"send","phone":"7535898638"}
+[2026-03-13 12:10:59] OTP send request received.
+[2026-03-13 12:10:59] OTP request blocked: resend throttled.
+[2026-03-13 12:11:03] OTP request received: method=POST | payload={"action":"send","phone":"7535898638"}
+[2026-03-13 12:11:03] OTP send request received.
+[2026-03-13 12:11:03] OTP local_mode enabled. OTP=675598 for 75******38
+[2026-03-13 12:11:10] OTP request received: method=POST | payload={"action":"verify","phone":"7535898638","code":"675598"}

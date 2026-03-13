@@ -3,6 +3,9 @@ RewriteEngine On
 
 # Redirect explicit .php URLs to clean URLs.
 # Leading slash avoids double subdirectory segments when deployed in /judiciarypro.
+# Skip ajax/admin to avoid POST->GET redirect issues on API endpoints.
+RewriteCond %{REQUEST_URI} !^/ajax/ [NC]
+RewriteCond %{REQUEST_URI} !^/admin/ [NC]
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.php([?\s]) [NC]
 RewriteRule ^ /%1 [R=301,L]
 

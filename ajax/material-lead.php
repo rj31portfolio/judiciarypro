@@ -41,6 +41,24 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+$phoneDigits = preg_replace('/\D+/', '', $phone);
+$phoneNormalized = strlen($phoneDigits) >= 10 ? substr($phoneDigits, -10) : $phoneDigits;
+if ($phoneNormalized === '' || strlen($phoneNormalized) !== 10) {
+    http_response_code(422);
+    echo json_encode(['ok' => false, 'message' => 'Please enter a valid 10-digit mobile number.']);
+    exit;
+}
+
+$otpValid = isset($_SESSION['otp_verified'], $_SESSION['otp_phone'], $_SESSION['otp_expires'])
+    && $_SESSION['otp_verified'] === true
+    && $_SESSION['otp_phone'] === $phoneNormalized
+    && $_SESSION['otp_expires'] >= time();
+if (!$otpValid) {
+    http_response_code(403);
+    echo json_encode(['ok' => false, 'message' => 'Please verify OTP before downloading.']);
+    exit;
+}
+
 $stmt = db()->prepare("SELECT id, title, pdfs_json FROM materials WHERE id = ? LIMIT 1");
 $stmt->execute([$materialId]);
 $material = $stmt->fetch();
@@ -81,7 +99,7 @@ $finalPdfName = $pdfName !== '' ? $pdfName : ($matched['name'] ?? basename($matc
 $materialTitle = $materialTitle !== '' ? $materialTitle : ($material['title'] ?? '');
 
 $stmt = db()->prepare('INSERT INTO material_leads (name, email, phone, material_id, material_title, pdf_name, pdf_file) VALUES (?,?,?,?,?,?,?)');
-$stmt->execute([$name, $email, $phone, $materialId, $materialTitle, $finalPdfName, $matched['file']]);
+$stmt->execute([$name, $email, $phoneNormalized, $materialId, $materialTitle, $finalPdfName, $matched['file']]);
 
 $downloadUrl = url_for($matched['file']);
 

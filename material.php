@@ -191,7 +191,16 @@ include __DIR__ . '/includes/header.php';
                         <input type="email" class="form-control" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="tel" class="form-control" name="phone" id="jp-lead-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="jp-edu-search jp-edu-phone">
+                            <span class="jp-edu-code">+91</span>
+                            <input type="tel" class="form-control" id="jp-lead-otp" placeholder="Enter OTP" inputmode="numeric" maxlength="6" style="display:none;">
+                            <button type="button" class="jp-otp-link" id="jp-lead-send-otp">Send OTP</button>
+                            <button type="button" class="jp-otp-link" id="jp-lead-verify-otp" style="display:none;">Verify</button>
+                        </div>
+                        <div class="jp-edu-help" id="jp-lead-otp-help"></div>
                     </div>
                     <input type="hidden" name="material_id" value="<?= (int)$material['id'] ?>">
                     <input type="hidden" name="material_title" value="<?= h($material['title']) ?>">
@@ -222,6 +231,33 @@ include __DIR__ . '/includes/header.php';
         var $pdfName = $('#jp-lead-pdf-name');
         var $pdfInput = $('#jp-lead-pdf-input');
         var $pdfFileInput = $('#jp-lead-pdf-file');
+        var $leadPhone = $('#jp-lead-phone');
+        var $otpSend = $('#jp-lead-send-otp');
+        var $otpVerify = $('#jp-lead-verify-otp');
+        var $otpInput = $('#jp-lead-otp');
+        var $otpHelp = $('#jp-lead-otp-help');
+        var otpVerified = false;
+        var $otpRow = $otpHelp.closest('.form-group');
+
+        function normalizePhone(value) {
+            var digits = (value || '').replace(/\D+/g, '');
+            if (digits.length > 10) {
+                digits = digits.slice(-10);
+            }
+            return digits;
+        }
+
+        function isValidPhone(value) {
+            return /^[0-9]{10}$/.test(value || '');
+        }
+
+        function showOtpHelp(message, isError) {
+            if (!$otpHelp.length) {
+                return;
+            }
+            $otpHelp.text(message || '');
+            $otpHelp.css('color', isError ? '#b91c1c' : '#2f855a');
+        }
 
         function leadDone() {
             try {
@@ -250,12 +286,115 @@ include __DIR__ . '/includes/header.php';
             $pdfInput.val(name);
             $pdfFileInput.val(file);
             $status.text('');
+            otpVerified = false;
+            $otpInput.val('').hide();
+            $otpVerify.hide();
+            $otpSend.prop('disabled', false).text('Send OTP');
+            showOtpHelp('Verify your phone to download.', false);
+            if ($otpRow.length) {
+                $otpRow.show();
+            }
+
+            try {
+                var savedPhone = localStorage.getItem('jp_verified_phone') || '';
+                if (savedPhone) {
+                    $leadPhone.val(savedPhone);
+                    $.ajax({
+                        url: 'ajax/otp',
+                        method: 'POST',
+                        dataType: 'json',
+                        data: { action: 'status', phone: savedPhone }
+                    }).done(function (res) {
+                        if (res && res.ok) {
+                            otpVerified = true;
+                            showOtpHelp('Phone already verified.', false);
+                            if ($otpRow.length) {
+                                $otpRow.hide();
+                            }
+                        }
+                    });
+                }
+            } catch (e) {}
             $modal.modal('show');
+        });
+
+        $otpSend.on('click', function () {
+            var phone = normalizePhone($.trim($leadPhone.val()));
+            if (!isValidPhone(phone)) {
+                showOtpHelp('Please enter a valid 10-digit mobile number.', true);
+                return;
+            }
+            otpVerified = false;
+            $otpSend.prop('disabled', true).text('Sending...');
+            $.ajax({
+                url: 'ajax/otp',
+                method: 'POST',
+                dataType: 'json',
+                data: { action: 'send', phone: phone }
+            }).done(function (res) {
+                if (res && res.ok) {
+                    $otpInput.show().focus();
+                    $otpVerify.show();
+                    showOtpHelp(res.message || 'OTP sent.', false);
+                } else {
+                    showOtpHelp((res && res.message) || 'Unable to send OTP.', true);
+                }
+            }).fail(function (xhr) {
+                var msg = 'Unable to send OTP right now.';
+                if (xhr && xhr.responseJSON && xhr.responseJSON.message) {
+                    msg = xhr.responseJSON.message;
+                }
+                showOtpHelp(msg, true);
+            }).always(function () {
+                $otpSend.prop('disabled', false).text('Resend OTP');
+            });
+        });
+
+        $otpVerify.on('click', function () {
+            var phone = normalizePhone($.trim($leadPhone.val()));
+            var code = $.trim($otpInput.val());
+            if (!isValidPhone(phone)) {
+                showOtpHelp('Please enter a valid 10-digit mobile number.', true);
+                return;
+            }
+            if (code === '') {
+                showOtpHelp('Please enter the OTP.', true);
+                return;
+            }
+            $otpVerify.prop('disabled', true).text('Verifying...');
+            $.ajax({
+                url: 'ajax/otp',
+                method: 'POST',
+                dataType: 'json',
+                data: { action: 'verify', phone: phone, code: code }
+            }).done(function (res) {
+                if (res && res.ok) {
+                    otpVerified = true;
+                    showOtpHelp('OTP verified.', false);
+                    if ($otpRow.length) {
+                        $otpRow.hide();
+                    }
+                    try {
+                        localStorage.setItem('jp_verified_phone', phone);
+                        localStorage.setItem('jp_otp_verified', '1');
+                    } catch (e) {}
+                } else {
+                    showOtpHelp((res && res.message) || 'Invalid OTP.', true);
+                }
+            }).fail(function () {
+                showOtpHelp('Unable to verify OTP right now.', true);
+            }).always(function () {
+                $otpVerify.prop('disabled', false).text('Verify');
+            });
         });
 
         $form.on('submit', function (e) {
             e.preventDefault();
             if (!pending) {
+                return;
+            }
+            if (!otpVerified) {
+                showOtpHelp('Please verify OTP before downloading.', true);
                 return;
             }
             var $btn = $form.find('button[type="submit"]');
