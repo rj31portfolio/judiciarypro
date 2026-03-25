@@ -25,8 +25,7 @@ return [
     //     'default_robots' => 'index,follow',
     // ],
     // Demo SMS API config (Twilio placeholders).
-
-    'sms' => [
+   'sms' => [
         // NimbusIT OTP settings.
         'provider' => 'nimbusit',
         'enabled' => true,
@@ -42,9 +41,7 @@ return [
         // For local XAMPP environments without CA certs.
         'ssl_verify' => false,
         // Enable to return provider error details in the JSON response (use false in production).
-        'debug' => false,
-        // Local dev: skip SMS API and return OTP in response.
-        'local_mode' => false,
+        'debug' => true,
     ],
     'mail' => [
         'enabled' => true,

@@ -27,7 +27,13 @@
                                 Gurugram – 122001 <br>
                                 Haryana, India
                             </address>
+                            
                             <ul class="list-unstyled lgx-address-info">
+                               <li>
+  <i class="fa fa-phone" style="color:red; font-weight:bold; background:yellow; padding:3px 6px; border-radius:4px;">
+    +91-9999455430
+  </i>
+</li>
                                 <li><i class="fa fa-phone"></i>+91 8447777020 | +91 9355688886 | +91 8447886331 | +91 9999455430</li>
                                 <li><i class="fa fa-envelope"></i><a href="mailto:help.judiciarypro@gmail.com">help.judiciarypro@gmail.com</a></li>
                             </ul>

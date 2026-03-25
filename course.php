@@ -16,6 +16,56 @@ if (!$course) {
     exit;
 }
 
+$sliderOne = [];
+if (!empty($course['slider_one_json'])) {
+    $decoded = json_decode($course['slider_one_json'], true);
+    if (is_array($decoded)) {
+        $sliderOne = $decoded;
+    }
+}
+$sliderTwo = [];
+if (!empty($course['slider_two_json'])) {
+    $decoded = json_decode($course['slider_two_json'], true);
+    if (is_array($decoded)) {
+        $sliderTwo = $decoded;
+    }
+}
+$pdfs = [];
+if (!empty($course['pdfs_json'])) {
+    $decoded = json_decode($course['pdfs_json'], true);
+    if (is_array($decoded)) {
+        $pdfs = $decoded;
+    }
+}
+$extraVideos = [];
+if (!empty($course['extra_youtube_json'])) {
+    $decoded = json_decode($course['extra_youtube_json'], true);
+    if (is_array($decoded)) {
+        $extraVideos = $decoded;
+    }
+}
+
+function youtube_id($url)
+{
+    $url = trim((string)$url);
+    if ($url === '') {
+        return '';
+    }
+    if (preg_match('~youtu\.be/([^\?&/]+)~', $url, $m)) {
+        return $m[1];
+    }
+    if (preg_match('~v=([^\?&/]+)~', $url, $m)) {
+        return $m[1];
+    }
+    if (preg_match('~youtube\.com/embed/([^\?&/]+)~', $url, $m)) {
+        return $m[1];
+    }
+    if (preg_match('~youtube\.com/shorts/([^\?&/]+)~', $url, $m)) {
+        return $m[1];
+    }
+    return '';
+}
+
 $seoDefaults = [
     'meta_title' => $course['title'] . ' - JudiciaryPRO',
     'meta_description' => $course['summary'],
@@ -36,6 +86,24 @@ include __DIR__ . '/includes/header.php';
                     <div class="row">
                         <div class="col-sm-12">
                             <article>
+                                <?php if ($sliderOne || $sliderTwo): ?>
+                                    <div class="jp-course-sliders jp-course-sliders-top">
+                                        <?php if ($sliderOne): ?>
+                                            <div class="jp-course-slider" data-interval="4500">
+                                                <?php foreach ($sliderOne as $index => $img): ?>
+                                                    <div class="jp-course-slide <?= $index === 0 ? 'is-active' : '' ?>" style="background-image:url('<?= h(url_for($img)) ?>');"></div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($sliderTwo): ?>
+                                            <div class="jp-course-slider jp-course-slider-alt" data-interval="5200">
+                                                <?php foreach ($sliderTwo as $index => $img): ?>
+                                                    <div class="jp-course-slide <?= $index === 0 ? 'is-active' : '' ?>" style="background-image:url('<?= h(url_for($img)) ?>');"></div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
                                 <header>
                                     <div class="text-area">
                                         <h1 class="title"><a href="#"><?= h($course['title']) ?></a></h1>
@@ -101,25 +169,93 @@ include __DIR__ . '/includes/header.php';
                                         ?>
                                         <a href="#"><img src="<?= h($courseImage) ?>" alt="<?= h($course['title']) ?>"/></a>
                                     </figure>
+                                    
                                 </header>
                                 <section>
-                                    <div class="lgx-course-feature-area">
-                                        <h3 class="title">Course Features</h3>
-                                        <ul class="list-unstyled lgx-course-feature">
-                                            <li class="lectures-feature"> <i class="fa fa-files-o"></i> <span class="label">Lectures</span> <span class="value"><?= h($course['lectures'] ?? 0) ?></span></li>
-                                            <li class="quizzes-feature"> <i class="fa fa-puzzle-piece"></i> <span class="label">Quizzes</span> <span class="value"><?= h($course['quizzes'] ?? 0) ?></span></li>
-                                            <li class="duration-feature"> <i class="fa fa-clock-o"></i> <span class="label">Duration</span> <span class="value"><?= h($course['duration'] ?? '') ?></span></li>
-                                            <li class="skill-feature"> <i class="fa fa-level-up"></i> <span class="label">Skill level</span> <span class="value"><?= h($course['skill_level'] ?? '') ?></span></li>
-                                            <li class="language-feature"> <i class="fa fa-language"></i> <span class="label">Language</span> <span class="value"><?= h($course['language'] ?? '') ?></span></li>
-                                            <li class="students-feature"> <i class="fa fa-users"></i> <span class="label">Students</span> <span class="value"><?= h($course['students_count'] ?? 0) ?></span></li>
-                                            <li class="assessments-feature"> <i class="fa fa-check-square-o"></i> <span class="label">Assessments</span> <span class="value"><?= h($course['assessments'] ?? '') ?></span></li>
-                                        </ul>
+                                    <?php
+                                    $featureId = youtube_id($course['feature_video_url'] ?? '');
+                                    ?>
+                                    <div class="jp-course-feature-row">
+                                        <?php if ($featureId !== ''): ?>
+                                            <div class="jp-course-feature-col jp-course-feature-video">
+                                                <div class="jp-course-feature-video-head">
+                                                    <h3 class="title">Featured Video</h3>
+                                                    <p>Quick walkthrough of what you will learn inside this course.</p>
+                                                </div>
+                                                <div class="jp-course-video-frame">
+                                                    <iframe src="https://www.youtube.com/embed/<?= h($featureId) ?>?autoplay=1&mute=1&loop=1&playlist=<?= h($featureId) ?>&rel=0&modestbranding=1"
+                                                            title="Course Feature Video"
+                                                            allow="autoplay; fullscreen; picture-in-picture"
+                                                            allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="jp-course-feature-col jp-course-feature-meta <?= $featureId !== '' ? '' : 'full' ?>">
+                                            <div class="lgx-course-feature-area">
+                                                <h3 class="title">Course Features</h3>
+                                                <ul class="list-unstyled lgx-course-feature">
+                                                    <li class="lectures-feature"> <i class="fa fa-files-o"></i> <span class="label">Lectures</span> <span class="value"><?= h($course['lectures'] ?? 0) ?></span></li>
+                                                    <li class="quizzes-feature"> <i class="fa fa-puzzle-piece"></i> <span class="label">Quizzes</span> <span class="value"><?= h($course['quizzes'] ?? 0) ?></span></li>
+                                                    <li class="duration-feature"> <i class="fa fa-clock-o"></i> <span class="label">Duration</span> <span class="value"><?= h($course['duration'] ?? '') ?></span></li>
+                                                    <li class="skill-feature"> <i class="fa fa-level-up"></i> <span class="label">Skill level</span> <span class="value"><?= h($course['skill_level'] ?? '') ?></span></li>
+                                                    <li class="language-feature"> <i class="fa fa-language"></i> <span class="label">Language</span> <span class="value"><?= h($course['language'] ?? '') ?></span></li>
+                                                    <li class="students-feature"> <i class="fa fa-users"></i> <span class="label">Students</span> <span class="value"><?= h($course['students_count'] ?? 0) ?></span></li>
+                                                    <li class="assessments-feature"> <i class="fa fa-check-square-o"></i> <span class="label">Assessments</span> <span class="value"><?= h($course['assessments'] ?? '') ?></span></li>
+                                                </ul>
+                                            </div>
+                                           
+                                        </div>
+                                         <?php if ($pdfs): ?>
+                                                <div class="jp-course-downloads">
+                                                    <h3 class="title">Downloads</h3>
+                                                    <div class="jp-course-download-grid">
+                                                        <?php foreach ($pdfs as $pdf): ?>
+                                                            <?php
+                                                            $pdfFile = trim($pdf['file'] ?? '');
+                                                            $pdfName = trim($pdf['name'] ?? '') ?: basename($pdfFile);
+                                                            if ($pdfFile === '') continue;
+                                                            ?>
+                                                            <a class="jp-course-download-card" href="<?= h(url_for($pdfFile)) ?>" target="_blank" rel="noopener">
+                                                                <div class="jp-course-download-icon"><i class="fa fa-file-pdf-o"></i></div>
+                                                                <div>
+                                                                    <span class="jp-course-download-label">PDF</span>
+                                                                    <h5><?= h($pdfName) ?></h5>
+                                                                </div>
+                                                            </a>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
+                                            <?php endif; ?>
                                     </div>
                                     <h3>Course Description</h3>
                                     <?php if (!empty($course['description'])): ?>
                                         <?= $course['description'] ?>
                                     <?php elseif (!empty($course['summary'])): ?>
                                         <p><?= h($course['summary']) ?></p>
+                                    <?php endif; ?>
+                                    <?php if ($extraVideos): ?>
+                                        <div class="jp-course-video-section">
+                                            <div class="jp-course-video-head">
+                                                <h3>More Video Lessons</h3>
+                                                <p>Watch curated sessions directly from our mentors.</p>
+                                            </div>
+                                            <div class="jp-course-video-grid">
+                                                <?php foreach ($extraVideos as $videoUrl): ?>
+                                                    <?php
+                                                    $id = youtube_id($videoUrl);
+                                                    if ($id === '') continue;
+                                                    ?>
+                                                    <div class="jp-course-video-card">
+                                                        <div class="jp-course-video-frame">
+                                                            <iframe src="https://www.youtube.com/embed/<?= h($id) ?>?rel=0&modestbranding=1"
+                                                                    title="Course Video"
+                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                                    allowfullscreen></iframe>
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
                                     <?php endif; ?>
                                 </section>
                                 <footer>
@@ -181,7 +317,23 @@ include __DIR__ . '/includes/header.php';
     </div>
 </div>
 <!--SIGNUP MODAL END-->
+<script>
+    window.addEventListener('load', function () {
+        var sliders = document.querySelectorAll('.jp-course-slider');
+        if (!sliders.length) return;
+        sliders.forEach(function (slider) {
+            var slides = slider.querySelectorAll('.jp-course-slide');
+            if (slides.length < 2) {
+                return;
+            }
+            var index = 0;
+            var interval = parseInt(slider.getAttribute('data-interval') || '5000', 10);
+            setInterval(function () {
+                slides[index].classList.remove('is-active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('is-active');
+            }, interval);
+        });
+    });
+</script>
 <?php include __DIR__ . '/includes/footer.php'; ?>
-
-
-

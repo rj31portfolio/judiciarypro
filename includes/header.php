@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require __DIR__ . '/bootstrap.php';
 $pageKey = $pageKey ?? 'page';
 $seoDefaults = $seoDefaults ?? [
@@ -148,7 +148,7 @@ $seoMeta = function_exists('seo_merge') ? seo_merge($pageKey, $seoDefaults) : $s
                         <div class="col-md-6">
                             <div class="contact">
                                 <ul class="list-inline">
-                                    <li><i class="fa fa-phone" aria-hidden="true"></i> +91 8447777020</li>
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i> +91 9999455430</li>
                                     <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:help.judiciarypro@gmail.com">help.judiciarypro@gmail.com</a></li>
                                 </ul>
                             </div>

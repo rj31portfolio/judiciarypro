@@ -24,7 +24,7 @@ $courseCategories = array_map(function ($row) {
                     <div class="col-xs-12">
                         <div class="lgx-heading-area">
                             <div class="lgx-heading lgx-heading-white">
-                                <h2 class="heading-title">Offerd Courses</h2>
+                                <h2 class="heading-title">Our Courses</h2>
                             </div>
                             <ul class="breadcrumb">
                                 <li><a href="index"><i class="icon-home6"></i>Home</a></li>
@@ -44,7 +44,7 @@ $courseCategories = array_map(function ($row) {
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="lgx-heading">
-                            <h2 class="heading-title">Offerd Courses</h2>
+                            <h2 class="heading-title">Our Courses</h2>
                             <h4 class="heading-subtitle">Explore our latest courses</h4>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require __DIR__ . '/bootstrap.php';
 $title = $title ?? 'Admin';
 ?>
@@ -175,7 +175,7 @@ $title = $title ?? 'Admin';
             <ul class="nav navbar-nav">
                 <li><a href="courses.php">Courses</a></li>
                 
-                <!-- <li><a href="materials.php">Materials</a></li>
+                 <li><a href="materials.php">Materials</a></li>
                 
                 <li><a href="material-leads.php">Material Leads</a></li> -->
                 <li><a href="students.php">Student Ranking</a></li>

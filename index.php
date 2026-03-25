@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $pageKey = 'home';
 $seoDefaults = [
     'meta_title' => 'JudiciaryPRO',
